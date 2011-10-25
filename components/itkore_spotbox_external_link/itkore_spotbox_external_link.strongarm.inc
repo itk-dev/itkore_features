@@ -1,11 +1,11 @@
 <?php
 /**
  * @file
- * spotbox_external_link.strongarm.inc
+ * itkore_spotbox_external_link.strongarm.inc
  */
 
 /**
- * Implementation of hook_strongarm().
+ * Implements hook_strongarm().
  */
 function itkore_spotbox_external_link_strongarm() {
   $export = array();
@@ -83,13 +83,6 @@ function itkore_spotbox_external_link_strongarm() {
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_options_spotbox';
-  $strongarm->value = array();
-  $export['node_options_spotbox'] = $strongarm;
-
-  $strongarm = new stdClass;
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'nodespotbox_spotbox';
   $strongarm->value = array(
     'enable' => '1',
@@ -101,6 +94,13 @@ function itkore_spotbox_external_link_strongarm() {
     ),
   );
   $export['nodespotbox_spotbox'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_spotbox';
+  $strongarm->value = array();
+  $export['node_options_spotbox'] = $strongarm;
 
   return $export;
 }

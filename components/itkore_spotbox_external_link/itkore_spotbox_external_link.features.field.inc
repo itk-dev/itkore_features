@@ -1,11 +1,11 @@
 <?php
 /**
  * @file
- * spotbox_external_link.features.field.inc
+ * itkore_spotbox_external_link.features.field.inc
  */
 
 /**
- * Implementation of hook_field_default_fields().
+ * Implements hook_field_default_fields().
  */
 function itkore_spotbox_external_link_field_default_fields() {
   $fields = array();
@@ -48,7 +48,7 @@ function itkore_spotbox_external_link_field_default_fields() {
           'label' => 'above',
           'module' => 'link',
           'settings' => array(),
-          'type' => 'default',
+          'type' => 'link_default',
           'weight' => 1,
         ),
         'teaser' => array(
@@ -76,6 +76,7 @@ function itkore_spotbox_external_link_field_default_fields() {
         'title_value' => '',
         'url' => 0,
         'user_register_form' => FALSE,
+        'validate_url' => 1,
       ),
       'widget' => array(
         'module' => 'link',

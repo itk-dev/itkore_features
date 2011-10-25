@@ -1,11 +1,11 @@
 <?php
 /**
  * @file
- * spotbox_external_link.views_default.inc
+ * itkore_spotbox_external_link.views_default.inc
  */
 
 /**
- * Implementation of hook_views_default_views().
+ * Implements hook_views_default_views().
  */
 function itkore_spotbox_external_link_views_default_views() {
   $export = array();
@@ -148,19 +148,6 @@ function itkore_spotbox_external_link_views_default_views() {
   $handler = $view->new_display('block', 'Spotbox: External link', 'spotbox_external_link');
   $handler->display->display_options['display_description'] = 'Spotbox with an external link';
   $handler->display->display_options['block_description'] = 'Spotbox: External link';
-  $translatables['spotbox_external_link'] = array(
-    t('Master'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('[field_spotbox_external_link-url]'),
-    t('[title]'),
-    t('Spotbox: External link'),
-    t('Spotbox with an external link'),
-  );
   $export['spotbox_external_link'] = $view;
 
   return $export;

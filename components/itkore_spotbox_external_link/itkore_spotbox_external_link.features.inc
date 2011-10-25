@@ -1,11 +1,11 @@
 <?php
 /**
  * @file
- * spotbox_external_link.features.inc
+ * itkore_spotbox_external_link.features.inc
  */
 
 /**
- * Implementation of hook_ctools_plugin_api().
+ * Implements hook_ctools_plugin_api().
  */
 function itkore_spotbox_external_link_ctools_plugin_api() {
   list($module, $api) = func_get_args();
@@ -15,7 +15,7 @@ function itkore_spotbox_external_link_ctools_plugin_api() {
 }
 
 /**
- * Implementation of hook_views_api().
+ * Implements hook_views_api().
  */
 function itkore_spotbox_external_link_views_api() {
   list($module, $api) = func_get_args();
@@ -25,7 +25,7 @@ function itkore_spotbox_external_link_views_api() {
 }
 
 /**
- * Implementation of hook_image_default_styles().
+ * Implements hook_image_default_styles().
  */
 function itkore_spotbox_external_link_image_default_styles() {
   $styles = array();
@@ -55,7 +55,7 @@ function itkore_spotbox_external_link_image_default_styles() {
 }
 
 /**
- * Implementation of hook_node_info().
+ * Implements hook_node_info().
  */
 function itkore_spotbox_external_link_node_info() {
   $items = array(
