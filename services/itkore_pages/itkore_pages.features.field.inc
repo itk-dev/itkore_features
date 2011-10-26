@@ -239,6 +239,7 @@ function itkore_pages_field_default_fields() {
         ),
         'enable_tokens' => 1,
         'title' => 'optional',
+        'title_maxlength' => 128,
         'title_value' => '',
         'url' => 0,
       ),
@@ -273,14 +274,17 @@ function itkore_pages_field_default_fields() {
       'settings' => array(
         'attributes' => array(
           'class' => '',
+          'configurable_title' => 0,
           'rel' => '',
           'target' => 'default',
+          'title' => 'link',
         ),
         'display' => array(
           'url_cutoff' => '',
         ),
         'enable_tokens' => 0,
         'title' => 'required',
+        'title_maxlength' => '128',
         'title_value' => '',
         'url' => 0,
         'user_register_form' => FALSE,
