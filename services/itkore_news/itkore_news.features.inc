@@ -20,7 +20,7 @@ function itkore_news_ctools_plugin_api() {
 function itkore_news_node_info() {
   $items = array(
     'news' => array(
-      'name' => t('News'),
+      'name' => t('Nyheder'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
