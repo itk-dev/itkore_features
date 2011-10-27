@@ -88,9 +88,9 @@ function itkore_spotbox_external_link_strongarm() {
     'enable' => '1',
     'always' => '0',
     'views' => array(
-      'name' => 'spotbox_internal_link',
-      'display_id' => 'spotbox_internal_link',
-      'user' => '0',
+      'name' => 'spotbox_external_link',
+      'display_id' => 'spotbox_external_link',
+      'user' => '1',
     ),
   );
   $export['nodespotbox_spotbox'] = $strongarm;
@@ -101,6 +101,20 @@ function itkore_spotbox_external_link_strongarm() {
   $strongarm->name = 'node_options_spotbox';
   $strongarm->value = array();
   $export['node_options_spotbox'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_preview_spotbox';
+  $strongarm->value = '1';
+  $export['node_preview_spotbox'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_submitted_spotbox';
+  $strongarm->value = 1;
+  $export['node_submitted_spotbox'] = $strongarm;
 
   return $export;
 }
