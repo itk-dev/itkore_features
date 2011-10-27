@@ -86,11 +86,11 @@ function itkore_spotbox_external_link_strongarm() {
   $strongarm->name = 'nodespotbox_spotbox';
   $strongarm->value = array(
     'enable' => '1',
-    'always' => '0',
+    'always' => '1',
     'views' => array(
       'name' => 'spotbox_external_link',
       'display_id' => 'spotbox_external_link',
-      'user' => '1',
+      'user' => '0',
     ),
   );
   $export['nodespotbox_spotbox'] = $strongarm;
