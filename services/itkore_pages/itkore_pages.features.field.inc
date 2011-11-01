@@ -131,7 +131,7 @@ function itkore_pages_field_default_fields() {
           'rows' => '20',
         ),
         'type' => 'text_textarea',
-        'weight' => '3',
+        'weight' => '2',
       ),
     ),
   );
@@ -212,7 +212,7 @@ function itkore_pages_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',
-        'weight' => '5',
+        'weight' => '4',
       ),
     ),
   );
@@ -295,7 +295,75 @@ function itkore_pages_field_default_fields() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_field',
-        'weight' => '4',
+        'weight' => '3',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-static_page-field_spotbox_title'
+  $fields['node-static_page-field_spotbox_title'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_spotbox_title',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'static_page',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 5,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_spotbox_title',
+      'label' => 'Spotbox title',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '7',
       ),
     ),
   );
@@ -330,7 +398,7 @@ function itkore_pages_field_default_fields() {
       'bundle' => 'static_page',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'This field is used for spotboxes.',
+      'description' => 'Spotbox content is displayed on spotboxes created from this page.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -347,10 +415,10 @@ function itkore_pages_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_teaser',
-      'label' => 'Teaser',
+      'label' => 'Spotbox content',
       'required' => 0,
       'settings' => array(
-        'text_processing' => '0',
+        'text_processing' => '1',
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -360,7 +428,7 @@ function itkore_pages_field_default_fields() {
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '2',
+        'weight' => '8',
       ),
     ),
   );
@@ -457,8 +525,9 @@ function itkore_pages_field_default_fields() {
   t('Content');
   t('Download');
   t('Links');
-  t('Teaser');
-  t('This field is used for spotboxes.');
+  t('Spotbox content');
+  t('Spotbox content is displayed on spotboxes created from this page.');
+  t('Spotbox title');
   t('Title image');
 
   return $fields;
