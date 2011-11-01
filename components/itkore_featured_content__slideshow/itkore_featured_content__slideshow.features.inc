@@ -23,3 +23,33 @@ function itkore_featured_content__slideshow_views_api() {
     return array("version" => "3.0");
   }
 }
+
+/**
+ * Implements hook_image_default_styles().
+ */
+function itkore_featured_content__slideshow_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: panorama_image
+  $styles['panorama_image'] = array(
+    'name' => 'panorama_image',
+    'effects' => array(
+      5 => array(
+        'label' => 'Scale and crop',
+        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
+        'effect callback' => 'image_scale_and_crop_effect',
+        'form callback' => 'image_resize_form',
+        'summary theme' => 'image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => '1176',
+          'height' => '420',
+        ),
+        'weight' => '1',
+      ),
+    ),
+  );
+
+  return $styles;
+}

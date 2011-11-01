@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * featured_content__slideshow.panels_default.inc
+ * itkore_featured_content__slideshow.panels_default.inc
  */
 
 /**
@@ -57,7 +57,7 @@ function itkore_featured_content__slideshow_default_panels_mini() {
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $mini->display = $display;
-  $export['itkore_featured_content__slideshow'] = $mini;
+  $export['featured_content__slideshow'] = $mini;
 
   return $export;
 }

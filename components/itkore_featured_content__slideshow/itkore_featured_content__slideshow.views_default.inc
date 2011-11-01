@@ -387,7 +387,7 @@ function itkore_featured_content__slideshow_views_default_views() {
   $handler->display->display_options['fields']['field_featured_image']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['field_featured_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_featured_image']['settings'] = array(
-    'image_style' => 'featuredcontent_slideshow_large',
+    'image_style' => 'panorama_image',
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_featured_image']['field_api_classes'] = 0;
