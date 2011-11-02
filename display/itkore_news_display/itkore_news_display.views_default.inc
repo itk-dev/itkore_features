@@ -41,6 +41,16 @@ function itkore_news_display_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['style_options']['wrapper_class'] = '';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: Content: Taxonomy terms on node */
+  $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
+  $handler->display->display_options['relationships']['term_node_tid']['field'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['term_node_tid']['required'] = 0;
+  $handler->display->display_options['relationships']['term_node_tid']['vocabularies'] = array(
+    'source' => 'source',
+    'subject' => 0,
+    'tags' => 0,
+  );
   /* Field: Content: Post date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
@@ -68,6 +78,31 @@ function itkore_news_display_views_default_views() {
   $handler->display->display_options['fields']['created']['empty_zero'] = 0;
   $handler->display->display_options['fields']['created']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['created']['date_format'] = 'day_month_year';
+  /* Field: Taxonomy term: Term ID */
+  $handler->display->display_options['fields']['tid']['id'] = 'tid';
+  $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['tid']['field'] = 'tid';
+  $handler->display->display_options['fields']['tid']['relationship'] = 'term_node_tid';
+  $handler->display->display_options['fields']['tid']['label'] = '';
+  $handler->display->display_options['fields']['tid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['tid']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['tid']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['tid']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['tid']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['tid']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['tid']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['tid']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['tid']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['tid']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['tid']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['tid']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['tid']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['tid']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['tid']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['tid']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['tid']['hide_alter_empty'] = 0;
+  $handler->display->display_options['fields']['tid']['format_plural'] = 0;
   /* Field: Date + Source */
   $handler->display->display_options['fields']['field_source']['id'] = 'field_source';
   $handler->display->display_options['fields']['field_source']['table'] = 'field_data_field_source';
@@ -75,8 +110,9 @@ function itkore_news_display_views_default_views() {
   $handler->display->display_options['fields']['field_source']['ui_name'] = 'Date + Source';
   $handler->display->display_options['fields']['field_source']['label'] = '';
   $handler->display->display_options['fields']['field_source']['alter']['alter_text'] = 1;
-  $handler->display->display_options['fields']['field_source']['alter']['text'] = '<p class="meta text-secondary"><span class="date">[created]</span> | [field_source]</p>';
+  $handler->display->display_options['fields']['field_source']['alter']['text'] = '<p class="meta text-secondary"><span class="date">[created]</span> | <a href="/nyheder/kilde/[tid]">[field_source]</a></p>';
   $handler->display->display_options['fields']['field_source']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_source']['alter']['path'] = 'nyheder/kilde/[tid]';
   $handler->display->display_options['fields']['field_source']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['field_source']['alter']['external'] = 0;
   $handler->display->display_options['fields']['field_source']['alter']['replace_spaces'] = 0;
@@ -94,6 +130,7 @@ function itkore_news_display_views_default_views() {
   $handler->display->display_options['fields']['field_source']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_source']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_source']['hide_alter_empty'] = 0;
+  $handler->display->display_options['fields']['field_source']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_source']['field_api_classes'] = 0;
   /* Field: Content: Subject */
   $handler->display->display_options['fields']['field_subject']['id'] = 'field_subject';
@@ -961,7 +998,11 @@ function itkore_news_display_views_default_views() {
     t('Items per page'),
     t('- All -'),
     t('Offset'),
-    t('<p class="meta text-secondary"><span class="date">[created]</span> | [field_source]</p>'),
+    t('term'),
+    t('.'),
+    t(','),
+    t('<p class="meta text-secondary"><span class="date">[created]</span> | <a href="/nyheder/kilde/[tid]">[field_source]</a></p>'),
+    t('nyheder/kilde/[tid]'),
     t('<h2 class="block-title news-title"><span class="keyword">[field_subject]: </span>[title]</h2>'),
     t('Read more'),
     t('All'),
@@ -979,6 +1020,7 @@ function itkore_news_display_views_default_views() {
     t('<a rel="external" href="[field_external_url]">[view_node]</a>'),
     t('List all news'),
     t('Featured news'),
+    t('<p class="meta text-secondary"><span class="date">[created]</span> | [field_source]</p>'),
     t('News articles that are promoted to front page'),
     t('Feed (source)'),
     t('Feed (all)'),
