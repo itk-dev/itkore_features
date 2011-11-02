@@ -146,6 +146,21 @@ function itkore_spotbox_video_views_default_views() {
   $handler = $view->new_display('block', 'Spotbox: Video', 'block');
   $handler->display->display_options['display_description'] = 'Spotbox displaying a video';
   $handler->display->display_options['block_description'] = 'Spotbox: Video';
+  $translatables['spotbox_video'] = array(
+    t('Master'),
+    t('Spotbox: Video'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('All'),
+    t('Spotbox displaying a video'),
+  );
   $export['spotbox_video'] = $view;
 
   return $export;
