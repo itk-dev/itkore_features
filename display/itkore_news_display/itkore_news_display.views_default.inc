@@ -7,7 +7,7 @@
 /**
  * Implements hook_views_default_views().
  */
-function puf_news_views_views_default_views() {
+function itkore_news_display_views_default_views() {
   $export = array();
 
   $view = new view;

@@ -7,7 +7,7 @@
 /**
  * Implements hook_menu_default_menu_custom().
  */
-function puf_news_views_menu_default_menu_custom() {
+function itkore_news_display_menu_default_menu_custom() {
   $menus = array();
 
   // Exported menu: main-menu

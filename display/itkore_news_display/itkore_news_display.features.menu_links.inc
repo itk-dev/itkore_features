@@ -7,7 +7,7 @@
 /**
  * Implements hook_menu_default_menu_links().
  */
-function puf_news_views_menu_default_menu_links() {
+function itkore_news_display_menu_default_menu_links() {
   $menu_links = array();
 
   // Exported menu link: main-menu:taxonomy/term/1

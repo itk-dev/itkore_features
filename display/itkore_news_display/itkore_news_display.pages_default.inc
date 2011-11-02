@@ -7,7 +7,7 @@
 /**
  * Implements hook_default_page_manager_handlers().
  */
-function puf_news_views_default_page_manager_handlers() {
+function itkore_news_display_default_page_manager_handlers() {
   $export = array();
 
   $handler = new stdClass;

@@ -7,7 +7,7 @@
 /**
  * Implements hook_ctools_plugin_api().
  */
-function puf_news_views_ctools_plugin_api() {
+function itk_news_display_ctools_plugin_api() {
   list($module, $api) = func_get_args();
   if ($module == "context" && $api == "context") {
     return array("version" => "3");
@@ -21,7 +21,7 @@ function puf_news_views_ctools_plugin_api() {
 /**
  * Implements hook_views_api().
  */
-function puf_news_views_views_api() {
+function itkore_news_display_views_api() {
   list($module, $api) = func_get_args();
   if ($module == "views" && $api == "views_default") {
     return array("version" => "3.0");
@@ -31,7 +31,7 @@ function puf_news_views_views_api() {
 /**
  * Implements hook_image_default_styles().
  */
-function puf_news_views_image_default_styles() {
+function itkore_news_display_image_default_styles() {
   $styles = array();
 
   // Exported image style: news_large
