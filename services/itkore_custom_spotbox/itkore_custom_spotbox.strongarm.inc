@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * itkore_spotbox_external_link.strongarm.inc
+ * itkore_custom_spotbox.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function itkore_spotbox_external_link_strongarm() {
+function itkore_custom_spotbox_strongarm() {
   $export = array();
 
   $strongarm = new stdClass;
@@ -89,8 +89,8 @@ function itkore_spotbox_external_link_strongarm() {
     'always' => '1',
     'views' => array(
       'name' => 'spotbox_external_link',
-      'display_id' => 'spotbox_external_link',
-      'user' => '0',
+      'display_id' => 'spotbox_external_default',
+      'user' => '1',
     ),
   );
   $export['nodespotbox_spotbox'] = $strongarm;
@@ -113,8 +113,57 @@ function itkore_spotbox_external_link_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_spotbox';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['node_submitted_spotbox'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_enable_spotbox';
+  $strongarm->value = 0;
+  $export['scheduler_publish_enable_spotbox'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_required_spotbox';
+  $strongarm->value = 0;
+  $export['scheduler_publish_required_spotbox'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_revision_spotbox';
+  $strongarm->value = 0;
+  $export['scheduler_publish_revision_spotbox'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_touch_spotbox';
+  $strongarm->value = 0;
+  $export['scheduler_publish_touch_spotbox'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_unpublish_enable_spotbox';
+  $strongarm->value = 0;
+  $export['scheduler_unpublish_enable_spotbox'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_unpublish_required_spotbox';
+  $strongarm->value = 0;
+  $export['scheduler_unpublish_required_spotbox'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_unpublish_revision_spotbox';
+  $strongarm->value = 0;
+  $export['scheduler_unpublish_revision_spotbox'] = $strongarm;
 
   return $export;
 }

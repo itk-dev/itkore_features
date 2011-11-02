@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the PUF News views feature.
+ */
+
+include_once('itkore_news_display.features.inc');

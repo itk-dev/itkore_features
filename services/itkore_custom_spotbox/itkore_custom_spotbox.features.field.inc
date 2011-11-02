@@ -1,14 +1,91 @@
 <?php
 /**
  * @file
- * itkore_spotbox_external_link.features.field.inc
+ * itkore_custom_spotbox.features.field.inc
  */
 
 /**
  * Implements hook_field_default_fields().
  */
-function itkore_spotbox_external_link_field_default_fields() {
+function itkore_custom_spotbox_field_default_fields() {
   $fields = array();
+
+  // Exported field: 'node-spotbox-field_download'
+  $fields['node-spotbox-field_download'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_download',
+      'foreign keys' => array(
+        'fid' => array(
+          'columns' => array(
+            'fid' => 'fid',
+          ),
+          'table' => 'file_managed',
+        ),
+      ),
+      'indexes' => array(
+        'fid' => array(
+          0 => 'fid',
+        ),
+      ),
+      'module' => 'file',
+      'settings' => array(
+        'display_default' => 0,
+        'display_field' => 0,
+        'uri_scheme' => 'public',
+      ),
+      'translatable' => '1',
+      'type' => 'file',
+    ),
+    'field_instance' => array(
+      'bundle' => 'spotbox',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'file',
+          'settings' => array(),
+          'type' => 'file_default',
+          'weight' => '2',
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_download',
+      'label' => 'Download',
+      'required' => 0,
+      'settings' => array(
+        'description_field' => 0,
+        'file_directory' => '',
+        'file_extensions' => 'txt pdf doc docx rtf xls xlsx ppt pptx jpeg jpg tif tiff png odf zip',
+        'max_filesize' => '',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'media',
+        'settings' => array(
+          'allowed_schemes' => array(
+            'public' => 'public',
+            'vimeo' => 0,
+            'youtube' => 0,
+          ),
+          'allowed_types' => array(
+            'audio' => 0,
+            'default' => 0,
+            'image' => 'image',
+            'video' => 0,
+          ),
+          'progress_indicator' => 'throbber',
+        ),
+        'type' => 'media_generic',
+        'weight' => '4',
+      ),
+    ),
+  );
 
   // Exported field: 'node-spotbox-field_spotbox_external_link'
   $fields['node-spotbox-field_spotbox_external_link'] = array(
@@ -46,11 +123,11 @@ function itkore_spotbox_external_link_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'inline',
           'module' => 'link',
           'settings' => array(),
-          'type' => 'link_default',
-          'weight' => 1,
+          'type' => 'link_url',
+          'weight' => '3',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -84,7 +161,7 @@ function itkore_spotbox_external_link_field_default_fields() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_field',
-        'weight' => '3',
+        'weight' => '2',
       ),
     ),
   );
@@ -124,14 +201,14 @@ function itkore_spotbox_external_link_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'image',
           'settings' => array(
-            'image_link' => '',
-            'image_style' => '',
+            'image_link' => 'file',
+            'image_style' => 'spotbox_external_link_image',
           ),
           'type' => 'image',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -209,11 +286,11 @@ function itkore_spotbox_external_link_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 2,
+          'weight' => '1',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -227,7 +304,7 @@ function itkore_spotbox_external_link_field_default_fields() {
       'label' => 'Text',
       'required' => 1,
       'settings' => array(
-        'text_processing' => '0',
+        'text_processing' => '1',
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -237,13 +314,14 @@ function itkore_spotbox_external_link_field_default_fields() {
           'rows' => '3',
         ),
         'type' => 'text_textarea',
-        'weight' => '2',
+        'weight' => '3',
       ),
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Download');
   t('Image');
   t('Link');
   t('Text');
