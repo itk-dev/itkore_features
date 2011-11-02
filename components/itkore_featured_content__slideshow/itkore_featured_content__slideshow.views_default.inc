@@ -441,7 +441,7 @@ function itkore_featured_content__slideshow_views_default_views() {
   $handler->display->display_options['fields']['nothing']['element_class'] = 'coverlayer-inner';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'coverlayer grid-4 alpha omega';
+  $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'coverlayer';
   $handler->display->display_options['fields']['nothing']['element_default_classes'] = 0;
   $handler->display->display_options['fields']['nothing']['hide_empty'] = 0;
   $handler->display->display_options['fields']['nothing']['empty_zero'] = 0;
