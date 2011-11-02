@@ -1,11 +1,11 @@
 <?php
 /**
  * @file
- * spotbox_internal_link.strongarm.inc
+ * itkore_spotbox_internal_link.strongarm.inc
  */
 
 /**
- * Implementation of hook_strongarm().
+ * Implements hook_strongarm().
  */
 function itkore_spotbox_internal_link_strongarm() {
   $export = array();
@@ -20,7 +20,7 @@ function itkore_spotbox_internal_link_strongarm() {
     'views' => array(
       'name' => 'spotbox_internal_link',
       'display_id' => 'spotbox_internal_link',
-      'user' => '0',
+      'user' => '1',
     ),
   );
   $export['nodespotbox_news'] = $strongarm;
@@ -35,7 +35,7 @@ function itkore_spotbox_internal_link_strongarm() {
     'views' => array(
       'name' => 'spotbox_internal_link',
       'display_id' => 'spotbox_internal_link',
-      'user' => '0',
+      'user' => '1',
     ),
   );
   $export['nodespotbox_static_page'] = $strongarm;
