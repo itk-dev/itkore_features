@@ -34,7 +34,7 @@ function itkore_news_field_default_fields() {
       'module' => 'text',
       'settings' => array(),
       'translatable' => '1',
-      'type' => 'text_long',
+      'type' => 'text_with_summary',
     ),
     'field_instance' => array(
       'bundle' => 'news',
@@ -61,6 +61,7 @@ function itkore_news_field_default_fields() {
       'label' => 'Content',
       'required' => 1,
       'settings' => array(
+        'display_summary' => 1,
         'text_processing' => '1',
         'user_register_form' => FALSE,
       ),
@@ -69,8 +70,9 @@ function itkore_news_field_default_fields() {
         'module' => 'text',
         'settings' => array(
           'rows' => '20',
+          'summary_rows' => 5,
         ),
-        'type' => 'text_textarea',
+        'type' => 'text_textarea_with_summary',
         'weight' => '3',
       ),
     ),
@@ -112,7 +114,7 @@ function itkore_news_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'file',
           'settings' => array(),
           'type' => 'file_default',
@@ -184,11 +186,10 @@ function itkore_news_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
-          'module' => 'link',
+          'label' => 'hidden',
           'settings' => array(),
-          'type' => 'link_default',
-          'weight' => '8',
+          'type' => 'hidden',
+          'weight' => '7',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -265,10 +266,10 @@ function itkore_news_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'link',
           'settings' => array(),
-          'type' => 'link_default',
+          'type' => 'link_url',
           'weight' => '3',
         ),
         'teaser' => array(
@@ -416,11 +417,10 @@ function itkore_news_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
-          'module' => 'taxonomy',
+          'label' => 'hidden',
           'settings' => array(),
-          'type' => 'taxonomy_term_reference_link',
-          'weight' => '7',
+          'type' => 'hidden',
+          'weight' => '6',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -486,11 +486,11 @@ function itkore_news_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'inline',
           'module' => 'taxonomy',
           'settings' => array(),
           'type' => 'taxonomy_term_reference_link',
-          'weight' => '6',
+          'weight' => '5',
         ),
         'teaser' => array(
           'label' => 'above',
