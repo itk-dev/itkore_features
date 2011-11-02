@@ -4,4 +4,4 @@
  * Code for the Spotbox: External links feature.
  */
 
-include_once('itkore_spotbox_external_link.features.inc');
+include_once('itkore_custom_spotbox_displays.features.inc');

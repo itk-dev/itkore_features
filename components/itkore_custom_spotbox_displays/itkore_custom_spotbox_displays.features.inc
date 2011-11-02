@@ -1,23 +1,13 @@
 <?php
 /**
  * @file
- * itkore_spotbox_external_link.features.inc
+ * itkore_custom_spotbox_displays.features.inc
  */
-
-/**
- * Implements hook_ctools_plugin_api().
- */
-function itkore_spotbox_external_link_ctools_plugin_api() {
-  list($module, $api) = func_get_args();
-  if ($module == "strongarm" && $api == "strongarm") {
-    return array("version" => "1");
-  }
-}
 
 /**
  * Implements hook_views_api().
  */
-function itkore_spotbox_external_link_views_api() {
+function itkore_custom_spotbox_displays_views_api() {
   list($module, $api) = func_get_args();
   if ($module == "views" && $api == "views_default") {
     return array("version" => "3.0");
@@ -27,7 +17,7 @@ function itkore_spotbox_external_link_views_api() {
 /**
  * Implements hook_image_default_styles().
  */
-function itkore_spotbox_external_link_image_default_styles() {
+function itkore_custom_spotbox_displays_image_default_styles() {
   $styles = array();
 
   // Exported image style: spotbox_external_link_image
@@ -43,7 +33,7 @@ function itkore_spotbox_external_link_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => '375',
+          'width' => '376',
           'height' => '200',
         ),
         'weight' => '1',
@@ -52,21 +42,4 @@ function itkore_spotbox_external_link_image_default_styles() {
   );
 
   return $styles;
-}
-
-/**
- * Implements hook_node_info().
- */
-function itkore_spotbox_external_link_node_info() {
-  $items = array(
-    'spotbox' => array(
-      'name' => t('Spotbox'),
-      'base' => 'node_content',
-      'description' => t('Create a spotbox with an external link.'),
-      'has_title' => '1',
-      'title_label' => t('Title'),
-      'help' => '',
-    ),
-  );
-  return $items;
 }
