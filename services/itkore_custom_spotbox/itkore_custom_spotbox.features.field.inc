@@ -14,7 +14,7 @@ function itkore_custom_spotbox_field_default_fields() {
   $fields['node-spotbox-field_download'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_download',
@@ -51,6 +51,12 @@ function itkore_custom_spotbox_field_default_fields() {
           'settings' => array(),
           'type' => 'file_default',
           'weight' => '2',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
       ),
       'entity_type' => 'node',

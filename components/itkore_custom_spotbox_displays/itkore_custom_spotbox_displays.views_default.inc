@@ -13,9 +13,9 @@ function itkore_custom_spotbox_displays_views_default_views() {
   $view = new view;
   $view->name = 'spotbox_external_link';
   $view->description = 'Spotboxes with external link';
-  $view->tag = 'default';
+  $view->tag = 'itkore';
   $view->base_table = 'node';
-  $view->human_name = 'Spotbox: External link';
+  $view->human_name = 'Custom Spotbox';
   $view->core = 7;
   $view->api_version = '3.0-alpha1';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -108,7 +108,7 @@ function itkore_custom_spotbox_displays_views_default_views() {
   $handler->display->display_options['fields']['field_spotbox_image']['alter']['external'] = 0;
   $handler->display->display_options['fields']['field_spotbox_image']['alter']['replace_spaces'] = 0;
   $handler->display->display_options['fields']['field_spotbox_image']['alter']['trim_whitespace'] = 0;
-  $handler->display->display_options['fields']['field_spotbox_image']['alter']['link_class'] = 'imagelink';
+  $handler->display->display_options['fields']['field_spotbox_image']['alter']['link_class'] = 'imagelink fullwidth';
   $handler->display->display_options['fields']['field_spotbox_image']['alter']['nl2br'] = 0;
   $handler->display->display_options['fields']['field_spotbox_image']['alter']['word_boundary'] = 1;
   $handler->display->display_options['fields']['field_spotbox_image']['alter']['ellipsis'] = 1;

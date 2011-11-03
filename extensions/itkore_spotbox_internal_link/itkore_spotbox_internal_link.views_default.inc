@@ -12,8 +12,8 @@ function itkore_spotbox_internal_link_views_default_views() {
 
   $view = new view;
   $view->name = 'spotbox_internal_link';
-  $view->description = 'Spotboxes with link to internal content (used on static page an news)';
-  $view->tag = 'default';
+  $view->description = 'Spotbox created from other content types';
+  $view->tag = 'itkore';
   $view->base_table = 'node';
   $view->human_name = 'Spotbox: Internal link';
   $view->core = 7;
@@ -32,6 +32,8 @@ function itkore_spotbox_internal_link_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = 1;
+  $handler->display->display_options['row_options']['default_field_elements'] = 0;
   /* Field: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -77,7 +79,7 @@ function itkore_spotbox_internal_link_views_default_views() {
   $handler->display->display_options['fields']['field_title_image']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['field_title_image']['alter']['html'] = 0;
   $handler->display->display_options['fields']['field_title_image']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_title_image']['element_class'] = 'imagelink';
+  $handler->display->display_options['fields']['field_title_image']['element_class'] = 'imagelink fullwidth';
   $handler->display->display_options['fields']['field_title_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_title_image']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_title_image']['element_default_classes'] = 0;
@@ -208,14 +210,6 @@ function itkore_spotbox_internal_link_views_default_views() {
 
   /* Display: Spotbox: Default */
   $handler = $view->new_display('block', 'Spotbox: Default', 'spotbox_internal_link');
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['hide_empty'] = 0;
-  $handler->display->display_options['row_options']['default_field_elements'] = 0;
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['block_description'] = 'Spotbox: Standard';
 
   /* Display: Spotbox: Alternative Style */
