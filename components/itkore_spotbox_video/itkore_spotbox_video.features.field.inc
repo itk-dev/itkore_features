@@ -43,11 +43,11 @@ function itkore_spotbox_video_field_default_fields() {
       'description' => 'Text displayed below the video.',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 1,
+          'weight' => '1',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -101,11 +101,13 @@ function itkore_spotbox_video_field_default_fields() {
       'description' => 'Select the video from an URL.',
       'display' => array(
         'default' => array(
-          'label' => 'above',
-          'module' => NULL,
-          'settings' => array(),
-          'type' => 'media_large',
-          'weight' => 0,
+          'label' => 'hidden',
+          'module' => 'media',
+          'settings' => array(
+            'file_view_mode' => 'media_large',
+          ),
+          'type' => 'media',
+          'weight' => '0',
         ),
         'teaser' => array(
           'label' => 'above',
