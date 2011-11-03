@@ -1,6 +1,5 @@
 core = "7.x"
 dependencies[] = "features"
-dependencies[] = "itkore_spotbox_external_link"
 dependencies[] = "media"
 dependencies[] = "media_vimeo"
 dependencies[] = "media_youtube"
