@@ -20,7 +20,7 @@ function itkore_pages_ctools_plugin_api() {
 function itkore_pages_node_info() {
   $items = array(
     'static_page' => array(
-      'name' => t('Statiske sider'),
+      'name' => t('Pages'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
