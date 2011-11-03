@@ -4,4 +4,4 @@
  * Code for the Spotbox: Internal link feature.
  */
 
-include_once('itkore_spotbox_internal_link.features.inc');
+include_once('itkore_spotbox.features.inc');

@@ -1,21 +1,21 @@
 <?php
 /**
  * @file
- * itkore_spotbox_internal_link.views_default.inc
+ * itkore_spotbox.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function itkore_spotbox_internal_link_views_default_views() {
+function itkore_spotbox_views_default_views() {
   $export = array();
 
   $view = new view;
-  $view->name = 'spotbox_internal_link';
+  $view->name = 'spotbox';
   $view->description = 'Spotbox created from other content types';
   $view->tag = 'itkore';
   $view->base_table = 'node';
-  $view->human_name = 'Spotbox: Internal link';
+  $view->human_name = 'Spotbox';
   $view->core = 7;
   $view->api_version = '3.0-alpha1';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -88,7 +88,7 @@ function itkore_spotbox_internal_link_views_default_views() {
   $handler->display->display_options['fields']['field_title_image']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['field_title_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_title_image']['settings'] = array(
-    'image_style' => 'spotbox_internal_link_image',
+    'image_style' => 'spotbox_image',
     'image_link' => 'content',
   );
   $handler->display->display_options['fields']['field_title_image']['field_api_classes'] = 0;
@@ -209,7 +209,7 @@ function itkore_spotbox_internal_link_views_default_views() {
   );
 
   /* Display: Spotbox: Default */
-  $handler = $view->new_display('block', 'Spotbox: Default', 'spotbox_internal_link');
+  $handler = $view->new_display('block', 'Spotbox: Default', 'spotbox');
   $handler->display->display_options['block_description'] = 'Spotbox: Standard';
 
   /* Display: Spotbox: Alternative Style */
@@ -267,7 +267,7 @@ function itkore_spotbox_internal_link_views_default_views() {
   $handler->display->display_options['fields']['field_title_image']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['field_title_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_title_image']['settings'] = array(
-    'image_style' => 'spotbox_internal_link_image',
+    'image_style' => 'spotbox_image',
     'image_link' => 'content',
   );
   $handler->display->display_options['fields']['field_title_image']['field_api_classes'] = 0;
@@ -382,7 +382,7 @@ function itkore_spotbox_internal_link_views_default_views() {
   $handler->display->display_options['fields']['title_1']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['title_1']['link_to_node'] = 1;
   $handler->display->display_options['block_description'] = 'Spotbox: Image';
-  $translatables['spotbox_internal_link'] = array(
+  $translatables['spotbox'] = array(
     t('Master'),
     t('more'),
     t('Apply'),
@@ -396,7 +396,7 @@ function itkore_spotbox_internal_link_views_default_views() {
     t('Spotbox: Alternative Style'),
     t('Spotbox: Image'),
   );
-  $export['spotbox_internal_link'] = $view;
+  $export['spotbox'] = $view;
 
   return $export;
 }

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * itkore_spotbox_internal_link.strongarm.inc
+ * itkore_spotbox.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function itkore_spotbox_internal_link_strongarm() {
+function itkore_spotbox_strongarm() {
   $export = array();
 
   $strongarm = new stdClass;
@@ -18,8 +18,8 @@ function itkore_spotbox_internal_link_strongarm() {
     'enable' => '1',
     'always' => '0',
     'views' => array(
-      'name' => 'spotbox_internal_link',
-      'display_id' => 'spotbox_internal_link',
+      'name' => 'spotbox',
+      'display_id' => 'spotbox',
       'user' => '1',
     ),
   );
@@ -33,8 +33,8 @@ function itkore_spotbox_internal_link_strongarm() {
     'enable' => '1',
     'always' => '0',
     'views' => array(
-      'name' => 'spotbox_internal_link',
-      'display_id' => 'spotbox_internal_link',
+      'name' => 'spotbox',
+      'display_id' => 'spotbox',
       'user' => '1',
     ),
   );
