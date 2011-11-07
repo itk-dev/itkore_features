@@ -1047,8 +1047,13 @@ function itkore_news_display_views_default_views() {
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_options']['row_class'] = 'menu-item';
+  $handler->display->display_options['style_options']['class'] = 'menu';
+  $handler->display->display_options['style_options']['wrapper_class'] = '';
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = 0;
+  $handler->display->display_options['row_options']['default_field_elements'] = 0;
   /* Field: Taxonomy term: Term ID */
   $handler->display->display_options['fields']['tid']['id'] = 'tid';
   $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
@@ -1122,7 +1127,6 @@ function itkore_news_display_views_default_views() {
   $handler->display->display_options['fields']['tid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['tid']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['tid']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['tid']['alter']['path'] = 'nyheder/kilde/[tid]';
   $handler->display->display_options['fields']['tid']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['tid']['alter']['external'] = 0;
   $handler->display->display_options['fields']['tid']['alter']['replace_spaces'] = 0;
@@ -1138,7 +1142,6 @@ function itkore_news_display_views_default_views() {
   $handler->display->display_options['fields']['tid']['hide_empty'] = 0;
   $handler->display->display_options['fields']['tid']['empty_zero'] = 0;
   $handler->display->display_options['fields']['tid']['hide_alter_empty'] = 0;
-  $handler->display->display_options['fields']['tid']['separator'] = '';
   $handler->display->display_options['fields']['tid']['format_plural'] = 0;
   /* Field: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
@@ -1159,7 +1162,7 @@ function itkore_news_display_views_default_views() {
   $handler->display->display_options['fields']['name']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['name']['alter']['html'] = 0;
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['name']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['name']['element_default_classes'] = 0;
   $handler->display->display_options['fields']['name']['hide_empty'] = 0;
   $handler->display->display_options['fields']['name']['empty_zero'] = 0;
   $handler->display->display_options['fields']['name']['hide_alter_empty'] = 0;
@@ -1250,6 +1253,7 @@ function itkore_news_display_views_default_views() {
     t('News subject links'),
     t('Subject'),
     t('Taxonomy links to news displayed in panels (/nyheder/kilde/<tag>)'),
+    t(','),
     t('nyheder/emne/[tid]'),
     t('News source links'),
   );
