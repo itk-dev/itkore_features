@@ -27,17 +27,17 @@ function itkore_news_display_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-1e5943a2e3f34736bbf7de4509382e08' => array(
+        'views-news_taxonomy_blocks-block_2' => array(
           'module' => 'views',
-          'delta' => '1e5943a2e3f34736bbf7de4509382e08',
+          'delta' => 'news_taxonomy_blocks-block_2',
           'region' => 'sidebar_first',
-          'weight' => '-28',
+          'weight' => '-10',
         ),
         'views-news_taxonomy_blocks-block_1' => array(
           'module' => 'views',
           'delta' => 'news_taxonomy_blocks-block_1',
           'region' => 'sidebar_first',
-          'weight' => '-27',
+          'weight' => '-9',
         ),
       ),
     ),
