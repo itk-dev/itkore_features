@@ -787,6 +787,21 @@ function itkore_news_display_views_default_views() {
   $handler->display->display_options['arguments']['field_subject_tid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['field_subject_tid']['break_phrase'] = 0;
   $handler->display->display_options['arguments']['field_subject_tid']['not'] = 0;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 0;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'news' => 'news',
+  );
   $handler->display->display_options['pane_title'] = 'News overview (subject parameter)';
   $handler->display->display_options['pane_description'] = 'News overview, which takes subject as parameter';
   $handler->display->display_options['pane_category']['name'] = 'News';
@@ -1066,6 +1081,21 @@ function itkore_news_display_views_default_views() {
   $handler->display->display_options['arguments']['field_source_tid']['validate']['fail'] = 'ignore';
   $handler->display->display_options['arguments']['field_source_tid']['break_phrase'] = 0;
   $handler->display->display_options['arguments']['field_source_tid']['not'] = 0;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 0;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'news' => 'news',
+  );
   $handler->display->display_options['pane_title'] = 'News overview (source parameter)';
   $handler->display->display_options['pane_description'] = 'News overview, which takes source as parameter';
   $handler->display->display_options['pane_category']['name'] = 'News';
