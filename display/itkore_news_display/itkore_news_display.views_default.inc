@@ -608,42 +608,13 @@ function itkore_news_display_views_default_views() {
   $handler->display->display_options['fields']['tid']['empty_zero'] = 0;
   $handler->display->display_options['fields']['tid']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['tid']['format_plural'] = 0;
-  /* Field: Date + Source */
-  $handler->display->display_options['fields']['field_source']['id'] = 'field_source';
-  $handler->display->display_options['fields']['field_source']['table'] = 'field_data_field_source';
-  $handler->display->display_options['fields']['field_source']['field'] = 'field_source';
-  $handler->display->display_options['fields']['field_source']['ui_name'] = 'Date + Source';
-  $handler->display->display_options['fields']['field_source']['label'] = '';
-  $handler->display->display_options['fields']['field_source']['alter']['alter_text'] = 1;
-  $handler->display->display_options['fields']['field_source']['alter']['text'] = '<p class="meta text-secondary"><a href="/nyheder/kilde/[tid]">[field_source]</a> | <span class="date">[created]</span></p>';
-  $handler->display->display_options['fields']['field_source']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['field_source']['alter']['path'] = 'nyheder/kilde/[tid]';
-  $handler->display->display_options['fields']['field_source']['alter']['absolute'] = 0;
-  $handler->display->display_options['fields']['field_source']['alter']['external'] = 0;
-  $handler->display->display_options['fields']['field_source']['alter']['replace_spaces'] = 0;
-  $handler->display->display_options['fields']['field_source']['alter']['trim_whitespace'] = 0;
-  $handler->display->display_options['fields']['field_source']['alter']['nl2br'] = 0;
-  $handler->display->display_options['fields']['field_source']['alter']['word_boundary'] = 1;
-  $handler->display->display_options['fields']['field_source']['alter']['ellipsis'] = 1;
-  $handler->display->display_options['fields']['field_source']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['field_source']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['field_source']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['field_source']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_source']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_source']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_source']['element_default_classes'] = 0;
-  $handler->display->display_options['fields']['field_source']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['field_source']['empty_zero'] = 0;
-  $handler->display->display_options['fields']['field_source']['hide_alter_empty'] = 0;
-  $handler->display->display_options['fields']['field_source']['type'] = 'taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_source']['field_api_classes'] = 0;
   /* Field: Content: Subject */
   $handler->display->display_options['fields']['field_subject']['id'] = 'field_subject';
   $handler->display->display_options['fields']['field_subject']['table'] = 'field_data_field_subject';
   $handler->display->display_options['fields']['field_subject']['field'] = 'field_subject';
   $handler->display->display_options['fields']['field_subject']['label'] = '';
-  $handler->display->display_options['fields']['field_subject']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_subject']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['field_subject']['alter']['alter_text'] = 1;
+  $handler->display->display_options['fields']['field_subject']['alter']['text'] = '<p class="meta text-secondary"><a href="/nyheder/emne/[field_subject-tid]">[field_subject]</a> | <span class="date">[created]</span></p>';
   $handler->display->display_options['fields']['field_subject']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_subject']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['field_subject']['alter']['external'] = 0;
@@ -664,28 +635,26 @@ function itkore_news_display_views_default_views() {
   $handler->display->display_options['fields']['field_subject']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['field_subject']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_subject']['field_api_classes'] = 0;
-  /* Field: Keyword + Title */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['ui_name'] = 'Keyword + Title';
   $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['alter_text'] = 1;
-  $handler->display->display_options['fields']['title']['alter']['text'] = '<h2 class="block-title news-title"><span class="keyword">[field_subject]: </span>[title]</h2>';
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['title']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['title']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['title']['alter']['external'] = 0;
   $handler->display->display_options['fields']['title']['alter']['replace_spaces'] = 0;
   $handler->display->display_options['fields']['title']['alter']['trim_whitespace'] = 0;
   $handler->display->display_options['fields']['title']['alter']['nl2br'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = 1;
   $handler->display->display_options['fields']['title']['alter']['strip_tags'] = 0;
   $handler->display->display_options['fields']['title']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['title']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['title']['element_type'] = '0';
+  $handler->display->display_options['fields']['title']['element_type'] = 'h2';
+  $handler->display->display_options['fields']['title']['element_class'] = 'block-title';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['title']['element_default_classes'] = 0;
   $handler->display->display_options['fields']['title']['hide_empty'] = 0;
   $handler->display->display_options['fields']['title']['empty_zero'] = 0;
@@ -787,6 +756,21 @@ function itkore_news_display_views_default_views() {
   $handler->display->display_options['arguments']['field_subject_tid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['field_subject_tid']['break_phrase'] = 0;
   $handler->display->display_options['arguments']['field_subject_tid']['not'] = 0;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 0;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'news' => 'news',
+  );
   $handler->display->display_options['pane_title'] = 'News overview (subject parameter)';
   $handler->display->display_options['pane_description'] = 'News overview, which takes subject as parameter';
   $handler->display->display_options['pane_category']['name'] = 'News';
@@ -1066,6 +1050,21 @@ function itkore_news_display_views_default_views() {
   $handler->display->display_options['arguments']['field_source_tid']['validate']['fail'] = 'ignore';
   $handler->display->display_options['arguments']['field_source_tid']['break_phrase'] = 0;
   $handler->display->display_options['arguments']['field_source_tid']['not'] = 0;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 0;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'news' => 'news',
+  );
   $handler->display->display_options['pane_title'] = 'News overview (source parameter)';
   $handler->display->display_options['pane_description'] = 'News overview, which takes source as parameter';
   $handler->display->display_options['pane_category']['name'] = 'News';
@@ -1619,10 +1618,10 @@ function itkore_news_display_views_default_views() {
     t('<p class="meta text-secondary"><a href="/nyheder/emne/[field_subject-tid]">[field_subject]</a> | <span class="date">[created]</span></p>'),
     t('News'),
     t('News overview (subject)'),
-    t('<p class="meta text-secondary"><a href="/nyheder/kilde/[tid]">[field_source]</a> | <span class="date">[created]</span></p>'),
     t('News overview (subject parameter)'),
     t('News overview, which takes subject as parameter'),
     t('News overview (source)'),
+    t('<p class="meta text-secondary"><a href="/nyheder/kilde/[tid]">[field_source]</a> | <span class="date">[created]</span></p>'),
     t('News overview (source parameter)'),
     t('News overview, which takes source as parameter'),
     t('News overview (import)'),

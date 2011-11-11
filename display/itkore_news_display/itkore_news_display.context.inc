@@ -17,6 +17,14 @@ function itkore_news_display_context_default_contexts() {
   $context->description = 'Places news related blocks on news pages';
   $context->tag = 'configuration';
   $context->conditions = array(
+    'node' => array(
+      'values' => array(
+        'news' => 'news',
+      ),
+      'options' => array(
+        'node_form' => '1',
+      ),
+    ),
     'path' => array(
       'values' => array(
         'nyheder' => 'nyheder',
