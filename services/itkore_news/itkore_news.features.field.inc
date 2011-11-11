@@ -47,7 +47,7 @@ function itkore_news_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '2',
+          'weight' => '3',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -118,7 +118,7 @@ function itkore_news_field_default_fields() {
           'module' => 'file',
           'settings' => array(),
           'type' => 'file_default',
-          'weight' => '4',
+          'weight' => '5',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -269,8 +269,8 @@ function itkore_news_field_default_fields() {
           'label' => 'hidden',
           'module' => 'link',
           'settings' => array(),
-          'type' => 'link_url',
-          'weight' => '3',
+          'type' => 'link_default',
+          'weight' => '4',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -348,7 +348,7 @@ function itkore_news_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '1',
+          'weight' => '2',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -486,11 +486,11 @@ function itkore_news_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'inline',
+          'label' => 'hidden',
           'module' => 'taxonomy',
           'settings' => array(),
           'type' => 'taxonomy_term_reference_link',
-          'weight' => '5',
+          'weight' => '0',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -558,7 +558,7 @@ function itkore_news_field_default_fields() {
             'image_style' => 'title_image',
           ),
           'type' => 'image',
-          'weight' => '0',
+          'weight' => '1',
         ),
         'teaser' => array(
           'label' => 'above',
