@@ -216,7 +216,7 @@ function itkore_news_display_views_default_views() {
   $handler->display->display_options['fields']['field_title_image']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['field_title_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_title_image']['settings'] = array(
-    'image_style' => 'news_medium',
+    'image_style' => 'news_thumbnail',
     'image_link' => 'content',
   );
   $handler->display->display_options['fields']['field_title_image']['field_api_classes'] = 0;
@@ -1237,7 +1237,7 @@ function itkore_news_display_views_default_views() {
   $handler->display->display_options['fields']['field_title_image']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['field_title_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_title_image']['settings'] = array(
-    'image_style' => 'news_medium',
+    'image_style' => 'news_thumbnail',
     'image_link' => 'content',
   );
   $handler->display->display_options['fields']['field_title_image']['field_api_classes'] = 0;
@@ -1447,7 +1447,7 @@ function itkore_news_display_views_default_views() {
   $handler->display->display_options['fields']['field_title_image']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['field_title_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_title_image']['settings'] = array(
-    'image_style' => 'news',
+    'image_style' => 'news_large',
     'image_link' => 'content',
   );
   $handler->display->display_options['fields']['field_title_image']['field_api_classes'] = 0;
