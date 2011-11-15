@@ -23,6 +23,7 @@ function itkore_spotbox_video_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Spotbox: Video';
+  $handler->display->display_options['css_class'] = 'block block-nodespotbox block-image';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
@@ -34,31 +35,6 @@ function itkore_spotbox_video_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['hide_empty'] = 0;
   $handler->display->display_options['row_options']['default_field_elements'] = 0;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['absolute'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['external'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['replace_spaces'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['trim_whitespace'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['nl2br'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['title']['element_type'] = 'h2';
-  $handler->display->display_options['fields']['title']['element_class'] = 'block-title';
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_default_classes'] = 0;
-  $handler->display->display_options['fields']['title']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['title']['empty_zero'] = 0;
-  $handler->display->display_options['fields']['title']['hide_alter_empty'] = 0;
-  $handler->display->display_options['fields']['title']['link_to_node'] = 0;
   /* Field: Content: Video */
   $handler->display->display_options['fields']['field_spotbox_video']['id'] = 'field_spotbox_video';
   $handler->display->display_options['fields']['field_spotbox_video']['table'] = 'field_data_field_spotbox_video';
@@ -104,6 +80,8 @@ function itkore_spotbox_video_views_default_views() {
   $handler->display->display_options['fields']['field_spotbox_text']['alter']['strip_tags'] = 0;
   $handler->display->display_options['fields']['field_spotbox_text']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['field_spotbox_text']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_spotbox_text']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_spotbox_text']['element_class'] = 'text-content';
   $handler->display->display_options['fields']['field_spotbox_text']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_spotbox_text']['element_default_classes'] = 0;
   $handler->display->display_options['fields']['field_spotbox_text']['hide_empty'] = 0;
