@@ -22,7 +22,7 @@ function itkore_spotbox_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['css_class'] = 'block block-nodespotbox block-secondary';
+  $handler->display->display_options['css_class'] = 'block block-secondary';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
@@ -215,7 +215,7 @@ function itkore_spotbox_views_default_views() {
   /* Display: Spotbox: Alternative Style */
   $handler = $view->new_display('block', 'Spotbox: Alternative Style', 'spotbox_variant');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
-  $handler->display->display_options['css_class'] = 'block block-nodespotbox block-secondary style-alternative';
+  $handler->display->display_options['css_class'] = 'block block-secondary style-alternative';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -229,7 +229,7 @@ function itkore_spotbox_views_default_views() {
   /* Display: Spotbox: Image */
   $handler = $view->new_display('block', 'Spotbox: Image', 'spotbox_image');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
-  $handler->display->display_options['css_class'] = 'block block-nodespotbox block-secondary block-image';
+  $handler->display->display_options['css_class'] = 'block block-secondary block-image';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -245,6 +245,7 @@ function itkore_spotbox_views_default_views() {
   $handler->display->display_options['fields']['field_title_image']['field'] = 'field_title_image';
   $handler->display->display_options['fields']['field_title_image']['ui_name'] = 'Image';
   $handler->display->display_options['fields']['field_title_image']['label'] = '';
+  $handler->display->display_options['fields']['field_title_image']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_title_image']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_title_image']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_title_image']['alter']['absolute'] = 0;
@@ -257,8 +258,7 @@ function itkore_spotbox_views_default_views() {
   $handler->display->display_options['fields']['field_title_image']['alter']['strip_tags'] = 0;
   $handler->display->display_options['fields']['field_title_image']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['field_title_image']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['field_title_image']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_title_image']['element_class'] = 'imagelink fullwidth';
+  $handler->display->display_options['fields']['field_title_image']['element_type'] = '0';
   $handler->display->display_options['fields']['field_title_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_title_image']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_title_image']['element_default_classes'] = 0;
@@ -268,7 +268,7 @@ function itkore_spotbox_views_default_views() {
   $handler->display->display_options['fields']['field_title_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_title_image']['settings'] = array(
     'image_style' => 'spotbox_image',
-    'image_link' => 'content',
+    'image_link' => '',
   );
   $handler->display->display_options['fields']['field_title_image']['field_api_classes'] = 0;
   /* Field: Title */
@@ -277,8 +277,10 @@ function itkore_spotbox_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['ui_name'] = 'Title';
   $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['title']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = 1;
+  $handler->display->display_options['fields']['title']['alter']['text'] = '[field_title_image]
+<div class="coverlayer"><h2 class="block-title">[title]</h2></div>';
+  $handler->display->display_options['fields']['title']['alter']['make_link'] = 1;
   $handler->display->display_options['fields']['title']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['title']['alter']['external'] = 0;
   $handler->display->display_options['fields']['title']['alter']['replace_spaces'] = 0;
@@ -289,10 +291,10 @@ function itkore_spotbox_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['strip_tags'] = 0;
   $handler->display->display_options['fields']['title']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['title']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['title']['element_type'] = 'h2';
-  $handler->display->display_options['fields']['title']['element_class'] = 'block-title fullwidth coverlayer ';
+  $handler->display->display_options['fields']['title']['element_type'] = '0';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'imagewrapper fullwidth imagelink';
   $handler->display->display_options['fields']['title']['element_default_classes'] = 0;
   $handler->display->display_options['fields']['title']['hide_empty'] = 0;
   $handler->display->display_options['fields']['title']['empty_zero'] = 0;
@@ -395,6 +397,8 @@ function itkore_spotbox_views_default_views() {
     t('Spotbox: Standard'),
     t('Spotbox: Alternative Style'),
     t('Spotbox: Image'),
+    t('[field_title_image]
+<div class="coverlayer"><h2 class="block-title">[title]</h2></div>'),
   );
   $export['spotbox'] = $view;
 
