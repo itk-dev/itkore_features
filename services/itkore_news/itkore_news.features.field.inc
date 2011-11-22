@@ -560,7 +560,7 @@ function itkore_news_field_default_fields() {
           'module' => 'taxonomy',
           'settings' => array(),
           'type' => 'taxonomy_term_reference_link',
-          'weight' => 8,
+          'weight' => '8',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -625,7 +625,7 @@ function itkore_news_field_default_fields() {
           'module' => 'image',
           'settings' => array(
             'image_link' => '',
-            'image_style' => 'title_image',
+            'image_style' => 'news_title_image',
           ),
           'type' => 'image',
           'weight' => '1',

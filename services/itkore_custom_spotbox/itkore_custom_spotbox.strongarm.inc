@@ -113,7 +113,7 @@ function itkore_custom_spotbox_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_spotbox';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['node_submitted_spotbox'] = $strongarm;
 
   $strongarm = new stdClass;
