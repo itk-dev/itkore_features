@@ -24,7 +24,7 @@ function itkore_pages_image_default_styles() {
   $styles['title_image'] = array(
     'name' => 'title_image',
     'effects' => array(
-      3 => array(
+      6 => array(
         'label' => 'Scale and crop',
         'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
         'effect callback' => 'image_scale_and_crop_effect',
@@ -35,7 +35,7 @@ function itkore_pages_image_default_styles() {
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => '1176',
-          'height' => '250',
+          'height' => '200',
         ),
         'weight' => '1',
       ),

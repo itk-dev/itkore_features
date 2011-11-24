@@ -44,8 +44,8 @@ function itkore_featured_content__slideshow_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 1176,
-          'height' => 420,
+          'width' => '1080',
+          'height' => '386',
         ),
         'weight' => '1',
       ),
