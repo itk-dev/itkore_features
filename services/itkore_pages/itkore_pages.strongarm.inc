@@ -23,6 +23,7 @@ function itkore_pages_strongarm() {
   $strongarm->name = 'menu_options_static_page';
   $strongarm->value = array(
     0 => 'main-menu',
+    1 => 'menu-secondary-links',
   );
   $export['menu_options_static_page'] = $strongarm;
 

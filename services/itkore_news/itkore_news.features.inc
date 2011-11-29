@@ -53,7 +53,7 @@ function itkore_news_node_info() {
     'news' => array(
       'name' => t('News'),
       'base' => 'node_content',
-      'description' => '',
+      'description' => t('News article. Listed on the news pages. Not placeable in menus.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
