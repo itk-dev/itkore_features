@@ -32,7 +32,7 @@ function itkore_custom_spotbox_node_info() {
     'spotbox' => array(
       'name' => t('Spotbox'),
       'base' => 'node_content',
-      'description' => t('Create a spotbox with an external link.'),
+      'description' => t('Create a spotbox that can be inserted into other pages on the site. Can link to other webpages.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
