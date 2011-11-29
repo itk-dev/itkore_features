@@ -384,6 +384,20 @@ function itkore_spotbox_views_default_views() {
   $handler->display->display_options['fields']['title_1']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['title_1']['link_to_node'] = 1;
   $handler->display->display_options['block_description'] = 'Spotbox: Image';
+
+  /* Display: Spotbox: Alternative 2 */
+  $handler = $view->new_display('block', 'Spotbox: Alternative 2', 'spotbox_variant2');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'block block-secondary style-alt2';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = 0;
+  $handler->display->display_options['row_options']['default_field_elements'] = 0;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['block_description'] = 'Spotbox: Alternative 2';
   $translatables['spotbox'] = array(
     t('Master'),
     t('more'),
@@ -399,6 +413,7 @@ function itkore_spotbox_views_default_views() {
     t('Spotbox: Image'),
     t('[field_title_image]
 <div class="coverlayer"><h2 class="block-title">[title]</h2></div>'),
+    t('Spotbox: Alternative 2'),
   );
   $export['spotbox'] = $view;
 

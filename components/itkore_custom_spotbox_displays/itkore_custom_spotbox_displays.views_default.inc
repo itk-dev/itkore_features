@@ -376,6 +376,13 @@ function itkore_custom_spotbox_displays_views_default_views() {
   $handler->display->display_options['fields']['field_download']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_download']['field_api_classes'] = 0;
   $handler->display->display_options['block_description'] = 'Image/video spotbox';
+
+  /* Display: Spotbox: Alternative 2 */
+  $handler = $view->new_display('block', 'Spotbox: Alternative 2', 'custom_spotbox_variant_2');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'style-alt2 block block-secondary';
+  $handler->display->display_options['display_description'] = 'Alternatively styled spotbox with external link';
+  $handler->display->display_options['block_description'] = 'Alternative 2 spotbox';
   $translatables['spotbox_external_link'] = array(
     t('Master'),
     t('more'),
@@ -400,6 +407,8 @@ function itkore_custom_spotbox_displays_views_default_views() {
     t('[field_spotbox_image]
 <div class="coverlayer"><h2 class="block-title">[title]</h2></div>'),
     t('Image/video spotbox'),
+    t('Spotbox: Alternative 2'),
+    t('Alternative 2 spotbox'),
   );
   $export['spotbox_external_link'] = $view;
 

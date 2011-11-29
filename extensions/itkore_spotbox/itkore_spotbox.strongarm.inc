@@ -19,7 +19,7 @@ function itkore_spotbox_strongarm() {
     'always' => '0',
     'views' => array(
       'name' => 'spotbox',
-      'display_id' => 'spotbox_default',
+      'display_id' => 'spotbox',
       'user' => '1',
     ),
   );
