@@ -53,7 +53,7 @@ function itkore_pages_node_info() {
     'static_page' => array(
       'name' => t('Pages'),
       'base' => 'node_content',
-      'description' => '',
+      'description' => t('Standard pages on the website, placeable in menus.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

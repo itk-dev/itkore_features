@@ -1,30 +1,30 @@
 <?php
 /**
  * @file
- * itkore_news.features.inc
+ * itkore_featured_content_flexslider.features.inc
  */
 
 /**
- * Implements hook_ctools_plugin_api().
+ * Implements hook_views_api().
  */
-function itkore_news_ctools_plugin_api() {
+function itkore_featured_content_flexslider_views_api() {
   list($module, $api) = func_get_args();
-  if ($module == "strongarm" && $api == "strongarm") {
-    return array("version" => "1");
+  if ($module == "views" && $api == "views_default") {
+    return array("version" => "3.0");
   }
 }
 
 /**
  * Implements hook_image_default_styles().
  */
-function itkore_news_image_default_styles() {
+function itkore_featured_content_flexslider_image_default_styles() {
   $styles = array();
 
-  // Exported image style: news_title_image
-  $styles['news_title_image'] = array(
-    'name' => 'news_title_image',
+  // Exported image style: flexslider_panorama
+  $styles['flexslider_panorama'] = array(
+    'name' => 'flexslider_panorama',
     'effects' => array(
-      4 => array(
+      5 => array(
         'label' => 'Scale and crop',
         'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
         'effect callback' => 'image_scale_and_crop_effect',
@@ -34,8 +34,8 @@ function itkore_news_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 576,
-          'height' => 355,
+          'width' => '1080',
+          'height' => '320',
         ),
         'weight' => '1',
       ),
@@ -43,21 +43,4 @@ function itkore_news_image_default_styles() {
   );
 
   return $styles;
-}
-
-/**
- * Implements hook_node_info().
- */
-function itkore_news_node_info() {
-  $items = array(
-    'news' => array(
-      'name' => t('News'),
-      'base' => 'node_content',
-      'description' => t('News article. Listed on the news pages. Not placeable in menus.'),
-      'has_title' => '1',
-      'title_label' => t('Title'),
-      'help' => '',
-    ),
-  );
-  return $items;
 }
