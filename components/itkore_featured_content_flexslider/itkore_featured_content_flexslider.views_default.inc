@@ -413,8 +413,9 @@ function itkore_featured_content_flexslider_views_default_views() {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['ui_name'] = 'Combined teaser and heading';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<h2 class="block-title">[title]</h2>
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="coverlayer-inner"><h2 class="block-title">[title]</h2>
 [field_featured_text]
+</div>
 ';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = 1;
   $handler->display->display_options['fields']['nothing']['alter']['path'] = '[field_featured_link]';
@@ -422,12 +423,12 @@ function itkore_featured_content_flexslider_views_default_views() {
   $handler->display->display_options['fields']['nothing']['alter']['external'] = 0;
   $handler->display->display_options['fields']['nothing']['alter']['replace_spaces'] = 0;
   $handler->display->display_options['fields']['nothing']['alter']['trim_whitespace'] = 0;
-  $handler->display->display_options['fields']['nothing']['alter']['link_class'] = 'coverlayer-inner';
   $handler->display->display_options['fields']['nothing']['alter']['nl2br'] = 0;
   $handler->display->display_options['fields']['nothing']['alter']['word_boundary'] = 1;
   $handler->display->display_options['fields']['nothing']['alter']['ellipsis'] = 1;
-  $handler->display->display_options['fields']['nothing']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['strip_tags'] = 1;
   $handler->display->display_options['fields']['nothing']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['preserve_tags'] = '<p> <br> <b> <strong> <u> <em> <i> <ul> <li> <ol>';
   $handler->display->display_options['fields']['nothing']['alter']['html'] = 0;
   $handler->display->display_options['fields']['nothing']['element_type'] = '0';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
@@ -466,8 +467,9 @@ function itkore_featured_content_flexslider_views_default_views() {
 <div class="teaser">[field_featured_text]</div>
 <p class="link">[field_featured_link-title]</p>
 </a>'),
-    t('<h2 class="block-title">[title]</h2>
+    t('<div class="coverlayer-inner"><h2 class="block-title">[title]</h2>
 [field_featured_text]
+</div>
 '),
     t('FC: FlexSlider'),
   );
