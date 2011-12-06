@@ -364,8 +364,9 @@ function itkore_featured_content_flexslider_views_default_views() {
   $handler->display->display_options['fields']['field_featured_text']['alter']['nl2br'] = 0;
   $handler->display->display_options['fields']['field_featured_text']['alter']['word_boundary'] = 1;
   $handler->display->display_options['fields']['field_featured_text']['alter']['ellipsis'] = 1;
-  $handler->display->display_options['fields']['field_featured_text']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_featured_text']['alter']['strip_tags'] = 1;
   $handler->display->display_options['fields']['field_featured_text']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_featured_text']['alter']['preserve_tags'] = '<p> <br> <b> <strong> <u> <em> <i> <ul> <li> <ol>';
   $handler->display->display_options['fields']['field_featured_text']['alter']['html'] = 0;
   $handler->display->display_options['fields']['field_featured_text']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_featured_text']['element_default_classes'] = 0;
@@ -426,9 +427,8 @@ function itkore_featured_content_flexslider_views_default_views() {
   $handler->display->display_options['fields']['nothing']['alter']['nl2br'] = 0;
   $handler->display->display_options['fields']['nothing']['alter']['word_boundary'] = 1;
   $handler->display->display_options['fields']['nothing']['alter']['ellipsis'] = 1;
-  $handler->display->display_options['fields']['nothing']['alter']['strip_tags'] = 1;
+  $handler->display->display_options['fields']['nothing']['alter']['strip_tags'] = 0;
   $handler->display->display_options['fields']['nothing']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['nothing']['alter']['preserve_tags'] = '<p> <br> <b> <strong> <u> <em> <i> <ul> <li> <ol>';
   $handler->display->display_options['fields']['nothing']['alter']['html'] = 0;
   $handler->display->display_options['fields']['nothing']['element_type'] = '0';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
