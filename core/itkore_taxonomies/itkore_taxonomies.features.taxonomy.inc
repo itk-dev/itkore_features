@@ -9,11 +9,11 @@
  */
 function itkore_taxonomies_taxonomy_default_vocabularies() {
   return array(
-    'tags' => array(
-      'name' => 'Tags',
-      'machine_name' => 'tags',
-      'description' => 'Use tags to group articles on similar topics into categories.',
-      'hierarchy' => '0',
+    'subject' => array(
+      'name' => 'Subject',
+      'machine_name' => 'subject',
+      'description' => '',
+      'hierarchy' => '1',
       'module' => 'taxonomy',
       'weight' => '0',
       'rdf_mapping' => array(
@@ -32,10 +32,10 @@ function itkore_taxonomies_taxonomy_default_vocabularies() {
         ),
       ),
     ),
-    'subject' => array(
-      'name' => 'Subject',
-      'machine_name' => 'subject',
-      'description' => '',
+    'tags' => array(
+      'name' => 'Tags',
+      'machine_name' => 'tags',
+      'description' => 'Use tags to group articles on similar topics into categories.',
       'hierarchy' => '0',
       'module' => 'taxonomy',
       'weight' => '0',
