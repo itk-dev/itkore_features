@@ -586,14 +586,14 @@ function itkore_news_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-news-field_title_image'
-  $fields['node-news-field_title_image'] = array(
+  // Exported field: 'node-news-field_news_title_image'
+  $fields['node-news-field_news_title_image'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_title_image',
+      'field_name' => 'field_news_title_image',
       'foreign keys' => array(
         'fid' => array(
           'columns' => array(
@@ -638,7 +638,7 @@ function itkore_news_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_title_image',
+      'field_name' => 'field_news_title_image',
       'label' => 'Title image',
       'required' => 0,
       'settings' => array(
