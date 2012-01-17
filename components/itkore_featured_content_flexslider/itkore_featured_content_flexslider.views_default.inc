@@ -17,7 +17,7 @@ function itkore_featured_content_flexslider_views_default_views() {
   $view->base_table = 'node';
   $view->human_name = 'Featured content: FlexSlider';
   $view->core = 7;
-  $view->api_version = '3.0-alpha1';
+  $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
@@ -215,6 +215,11 @@ function itkore_featured_content_flexslider_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'featured_content' => 'featured_content',
   );
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
 
   /* Display: Featured Content Flexslider Panorama */
   $handler = $view->new_display('panel_pane', 'Featured Content Flexslider Panorama', 'fc_flexslider_1');
