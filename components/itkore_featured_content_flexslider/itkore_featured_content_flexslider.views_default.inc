@@ -17,17 +17,22 @@ function itkore_featured_content_flexslider_views_default_views() {
   $view->base_table = 'node';
   $view->human_name = 'Featured content: FlexSlider';
   $view->core = 7;
-  $view->api_version = '3.0-alpha1';
+  $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Featured Content';
+  $handler->display->display_options['use_more_text'] = 'mere';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Gendan';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortér efter';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Stigende';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Faldende';
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -80,7 +85,16 @@ function itkore_featured_content_flexslider_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['hide_empty'] = 1;
   $handler->display->display_options['row_options']['default_field_elements'] = 0;
-  /* Field: Content: Title */
+  /* Forbindelse: Nodequeue: Queue */
+  $handler->display->display_options['relationships']['nodequeue_rel']['id'] = 'nodequeue_rel';
+  $handler->display->display_options['relationships']['nodequeue_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['nodequeue_rel']['field'] = 'nodequeue_rel';
+  $handler->display->display_options['relationships']['nodequeue_rel']['required'] = 1;
+  $handler->display->display_options['relationships']['nodequeue_rel']['limit'] = 1;
+  $handler->display->display_options['relationships']['nodequeue_rel']['names'] = array(
+    'featured_content' => 'featured_content',
+  );
+  /* Felt: Indhold: Titel */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -96,7 +110,7 @@ function itkore_featured_content_flexslider_views_default_views() {
   $handler->display->display_options['fields']['title']['hide_empty'] = 0;
   $handler->display->display_options['fields']['title']['empty_zero'] = 0;
   $handler->display->display_options['fields']['title']['link_to_node'] = 1;
-  /* Field: Content: Link */
+  /* Felt: Indhold: Link */
   $handler->display->display_options['fields']['field_featured_link']['id'] = 'field_featured_link';
   $handler->display->display_options['fields']['field_featured_link']['table'] = 'field_data_field_featured_link';
   $handler->display->display_options['fields']['field_featured_link']['field'] = 'field_featured_link';
@@ -122,7 +136,7 @@ function itkore_featured_content_flexslider_views_default_views() {
   $handler->display->display_options['fields']['field_featured_link']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['field_featured_link']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_featured_link']['field_api_classes'] = 0;
-  /* Field: Content: Teaser */
+  /* Felt: Indhold: Teaser */
   $handler->display->display_options['fields']['field_featured_text']['id'] = 'field_featured_text';
   $handler->display->display_options['fields']['field_featured_text']['table'] = 'field_data_field_featured_text';
   $handler->display->display_options['fields']['field_featured_text']['field'] = 'field_featured_text';
@@ -150,7 +164,7 @@ function itkore_featured_content_flexslider_views_default_views() {
     'trim_length' => '600',
   );
   $handler->display->display_options['fields']['field_featured_text']['field_api_classes'] = 0;
-  /* Field: Content: Image */
+  /* Felt: Indhold: Image */
   $handler->display->display_options['fields']['field_featured_image']['id'] = 'field_featured_image';
   $handler->display->display_options['fields']['field_featured_image']['table'] = 'field_data_field_featured_image';
   $handler->display->display_options['fields']['field_featured_image']['field'] = 'field_featured_image';
@@ -180,7 +194,7 @@ function itkore_featured_content_flexslider_views_default_views() {
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_featured_image']['field_api_classes'] = 0;
-  /* Field: Global: View result counter */
+  /* Felt: Global: View resultattæller */
   $handler->display->display_options['fields']['counter']['id'] = 'counter';
   $handler->display->display_options['fields']['counter']['table'] = 'views';
   $handler->display->display_options['fields']['counter']['field'] = 'counter';
@@ -203,18 +217,16 @@ function itkore_featured_content_flexslider_views_default_views() {
   $handler->display->display_options['fields']['counter']['empty_zero'] = 0;
   $handler->display->display_options['fields']['counter']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['counter']['counter_start'] = '1';
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'featured_content' => 'featured_content',
-  );
+  /* Sorteringskriterie: Nodequeue: Placering */
+  $handler->display->display_options['sorts']['position']['id'] = 'position';
+  $handler->display->display_options['sorts']['position']['table'] = 'nodequeue_nodes';
+  $handler->display->display_options['sorts']['position']['field'] = 'position';
+  $handler->display->display_options['sorts']['position']['relationship'] = 'nodequeue_rel';
+  /* Filterkriterie: Indhold: Udgivet */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
 
   /* Display: Featured Content Flexslider Panorama */
   $handler = $view->new_display('panel_pane', 'Featured Content Flexslider Panorama', 'fc_flexslider_1');
@@ -289,7 +301,7 @@ function itkore_featured_content_flexslider_views_default_views() {
   $handler->display->display_options['row_options']['default_field_elements'] = 0;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Link */
+  /* Felt: Indhold: Link */
   $handler->display->display_options['fields']['field_featured_link']['id'] = 'field_featured_link';
   $handler->display->display_options['fields']['field_featured_link']['table'] = 'field_data_field_featured_link';
   $handler->display->display_options['fields']['field_featured_link']['field'] = 'field_featured_link';
@@ -321,7 +333,7 @@ function itkore_featured_content_flexslider_views_default_views() {
   $handler->display->display_options['fields']['field_featured_link']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_featured_link']['type'] = 'link_url';
   $handler->display->display_options['fields']['field_featured_link']['field_api_classes'] = 0;
-  /* Field: Content: Title */
+  /* Felt: Indhold: Titel */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -348,7 +360,7 @@ function itkore_featured_content_flexslider_views_default_views() {
   $handler->display->display_options['fields']['title']['empty_zero'] = 0;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['title']['link_to_node'] = 0;
-  /* Field: Content: Teaser */
+  /* Felt: Indhold: Teaser */
   $handler->display->display_options['fields']['field_featured_text']['id'] = 'field_featured_text';
   $handler->display->display_options['fields']['field_featured_text']['table'] = 'field_data_field_featured_text';
   $handler->display->display_options['fields']['field_featured_text']['field'] = 'field_featured_text';
@@ -377,7 +389,7 @@ function itkore_featured_content_flexslider_views_default_views() {
     'trim_length' => '600',
   );
   $handler->display->display_options['fields']['field_featured_text']['field_api_classes'] = 0;
-  /* Field: Content: Image */
+  /* Felt: Indhold: Image */
   $handler->display->display_options['fields']['field_featured_image']['id'] = 'field_featured_image';
   $handler->display->display_options['fields']['field_featured_image']['table'] = 'field_data_field_featured_image';
   $handler->display->display_options['fields']['field_featured_image']['field'] = 'field_featured_image';
@@ -408,7 +420,7 @@ function itkore_featured_content_flexslider_views_default_views() {
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_featured_image']['field_api_classes'] = 0;
-  /* Field: Combined teaser and heading */
+  /* Felt: Combined teaser and heading */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
@@ -453,12 +465,13 @@ function itkore_featured_content_flexslider_views_default_views() {
   $translatables['featured_content_flexslider'] = array(
     t('Master'),
     t('Featured Content'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
+    t('mere'),
+    t('Søg'),
+    t('Gendan'),
+    t('Sortér efter'),
+    t('Stigende'),
+    t('Faldende'),
+    t('queue'),
     t('[field_featured_link]'),
     t('Featured Content Flexslider Panorama'),
     t('Forside FlexSlider'),
