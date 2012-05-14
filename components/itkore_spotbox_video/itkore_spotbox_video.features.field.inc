@@ -106,7 +106,7 @@ function itkore_spotbox_video_field_default_fields() {
       'bundle' => 'spotbox_video',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Paste the embed code from the video service (eg. Vimeo, Youtube) into this field. If the site is using the FitVids javascript plugin, the video is automatically scaled to fit inside its container. The width of the video can\'t exceed the width specified in the embed code, so make sure it is wide enough. For example if you want the video to have a maximum width of 1200 pixels make sure you select 1200 pixels in your embed code.',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -144,6 +144,7 @@ function itkore_spotbox_video_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Paste the embed code from the video service (eg. Vimeo, Youtube) into this field. If the site is using the FitVids javascript plugin, the video is automatically scaled to fit inside its container. The width of the video can\'t exceed the width specified in the embed code, so make sure it is wide enough. For example if you want the video to have a maximum width of 1200 pixels make sure you select 1200 pixels in your embed code.');
   t('Text');
   t('Text displayed below the video.');
   t('Video');
