@@ -17,25 +17,59 @@ function itkore_spotbox_video_views_default_views() {
   $view->base_table = 'node';
   $view->human_name = 'Spotbox: Video';
   $view->core = 7;
-  $view->api_version = '3.0-alpha1';
+  $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Spotbox: Video';
   $handler->display->display_options['css_class'] = 'block block-nodespotbox block-image';
+  $handler->display->display_options['use_more_text'] = 'mere';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Gendan';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortér efter';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Stigende';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Faldende';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Elementer pr. side';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
+  $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Forskydning';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['hide_empty'] = 0;
   $handler->display->display_options['row_options']['default_field_elements'] = 0;
-  /* Field: Content: Video */
+  /* Felt: Indhold: Titel */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['title']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['title']['element_type'] = 'h2';
+  $handler->display->display_options['fields']['title']['element_class'] = 'block-title';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_default_classes'] = 0;
+  $handler->display->display_options['fields']['title']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['title']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['title']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['title']['link_to_node'] = 0;
+  /* Felt: Indhold: Video */
   $handler->display->display_options['fields']['field_spotbox_video']['id'] = 'field_spotbox_video';
   $handler->display->display_options['fields']['field_spotbox_video']['table'] = 'field_data_field_spotbox_video';
   $handler->display->display_options['fields']['field_spotbox_video']['field'] = 'field_spotbox_video';
@@ -49,21 +83,17 @@ function itkore_spotbox_video_views_default_views() {
   $handler->display->display_options['fields']['field_spotbox_video']['alter']['nl2br'] = 0;
   $handler->display->display_options['fields']['field_spotbox_video']['alter']['word_boundary'] = 1;
   $handler->display->display_options['fields']['field_spotbox_video']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_spotbox_video']['alter']['more_link'] = 0;
   $handler->display->display_options['fields']['field_spotbox_video']['alter']['strip_tags'] = 0;
   $handler->display->display_options['fields']['field_spotbox_video']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['field_spotbox_video']['alter']['html'] = 0;
   $handler->display->display_options['fields']['field_spotbox_video']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_spotbox_video']['element_default_classes'] = 0;
+  $handler->display->display_options['fields']['field_spotbox_video']['element_default_classes'] = 1;
   $handler->display->display_options['fields']['field_spotbox_video']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_spotbox_video']['empty_zero'] = 0;
-  $handler->display->display_options['fields']['field_spotbox_video']['hide_alter_empty'] = 0;
-  $handler->display->display_options['fields']['field_spotbox_video']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_spotbox_video']['type'] = 'media';
-  $handler->display->display_options['fields']['field_spotbox_video']['settings'] = array(
-    'file_view_mode' => 'default',
-  );
+  $handler->display->display_options['fields']['field_spotbox_video']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['field_spotbox_video']['field_api_classes'] = 0;
-  /* Field: Content: Text */
+  /* Felt: Indhold: Text */
   $handler->display->display_options['fields']['field_spotbox_text']['id'] = 'field_spotbox_text';
   $handler->display->display_options['fields']['field_spotbox_text']['table'] = 'field_data_field_spotbox_text';
   $handler->display->display_options['fields']['field_spotbox_text']['field'] = 'field_spotbox_text';
@@ -88,12 +118,12 @@ function itkore_spotbox_video_views_default_views() {
   $handler->display->display_options['fields']['field_spotbox_text']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_spotbox_text']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['field_spotbox_text']['field_api_classes'] = 0;
-  /* Sort criterion: Content: Post date */
+  /* Sorteringskriterie: Indhold: Oprettelsesdato */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Contextual filter: Content: Nid */
+  /* Kontekstuelt filter: Indhold: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
@@ -105,14 +135,14 @@ function itkore_spotbox_video_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['nid']['break_phrase'] = 0;
   $handler->display->display_options['arguments']['nid']['not'] = 0;
-  /* Filter criterion: Content: Published */
+  /* Filterkriterie: Indhold: Udgivet */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = '0';
   $handler->display->display_options['filters']['status']['group'] = 0;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filterkriterie: Indhold: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -127,16 +157,16 @@ function itkore_spotbox_video_views_default_views() {
   $translatables['spotbox_video'] = array(
     t('Master'),
     t('Spotbox: Video'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('All'),
+    t('mere'),
+    t('Udfør'),
+    t('Gendan'),
+    t('Sortér efter'),
+    t('Stigende'),
+    t('Faldende'),
+    t('Elementer pr. side'),
+    t('- Alle -'),
+    t('Forskydning'),
+    t('Alle'),
     t('Spotbox displaying a video'),
   );
   $export['spotbox_video'] = $view;

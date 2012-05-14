@@ -84,29 +84,35 @@ function itkore_spotbox_video_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_spotbox_video',
-      'foreign keys' => array(),
-      'indexes' => array(
-        'fid' => array(
-          0 => 'fid',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
         ),
       ),
-      'module' => 'media',
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
-      'type' => 'media',
+      'type' => 'text_long',
     ),
     'field_instance' => array(
       'bundle' => 'spotbox_video',
+      'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Select the video from an URL.',
+      'description' => '',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'module' => 'media',
-          'settings' => array(
-            'file_view_mode' => 'media_large',
-          ),
-          'type' => 'media',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
           'weight' => '0',
         ),
         'teaser' => array(
@@ -121,27 +127,16 @@ function itkore_spotbox_video_field_default_fields() {
       'label' => 'Video',
       'required' => 1,
       'settings' => array(
-        'file_extensions' => 'jpg jpeg gif png txt doc xls pdf ppt pps odt ods odp mp3 mov m4v mp4 mpeg avi ogg wmv ico',
+        'text_processing' => '1',
         'user_register_form' => FALSE,
       ),
       'widget' => array(
         'active' => 1,
-        'module' => 'media',
+        'module' => 'text',
         'settings' => array(
-          'allowed_schemes' => array(
-            'public' => 0,
-            'vimeo' => 'vimeo',
-            'youtube' => 'youtube',
-          ),
-          'allowed_types' => array(
-            'audio' => 0,
-            'default' => 0,
-            'image' => 0,
-            'video' => 'video',
-          ),
-          'progress_indicator' => 'throbber',
+          'rows' => '3',
         ),
-        'type' => 'media_generic',
+        'type' => 'text_textarea',
         'weight' => '1',
       ),
     ),
@@ -149,7 +144,6 @@ function itkore_spotbox_video_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Select the video from an URL.');
   t('Text');
   t('Text displayed below the video.');
   t('Video');
