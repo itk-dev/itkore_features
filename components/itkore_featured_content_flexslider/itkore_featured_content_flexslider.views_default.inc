@@ -462,6 +462,142 @@ function itkore_featured_content_flexslider_views_default_views() {
   $handler->display->display_options['allow']['title_override'] = 'title_override';
   $handler->display->display_options['allow']['exposed_form'] = 0;
   $handler->display->display_options['allow']['fields_override'] = 0;
+
+  /* Display: Featured Content Flexslider Panorama - clone */
+  $handler = $view->new_display('block', 'Featured Content Flexslider Panorama - clone', 'block_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Forside FlexSlider';
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'slideshow-panorama';
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'slideshow';
+  $handler->display->display_options['style_options']['wrapper_class'] = '';
+  $handler->display->display_options['style_options']['slideshow_type'] = 'flexslider_views_slideshow';
+  $handler->display->display_options['style_options']['slideshow_skin'] = 'default';
+  $handler->display->display_options['style_options']['skin_info'] = array(
+    'class' => 'default',
+    'name' => 'Default',
+    'module' => 'views_slideshow',
+    'path' => '',
+    'stylesheets' => array(),
+  );
+  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['weight'] = '1';
+  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
+  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
+    'title' => 0,
+    'field_featured_text' => 0,
+    'field_featured_link' => 0,
+    'field_featured_image' => 0,
+    'counter' => 0,
+    'nothing' => 0,
+  );
+  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
+  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
+  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_slide_counter']['weight'] = '1';
+  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
+  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['hide_on_single_slide'] = 1;
+  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
+  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
+    'title' => 0,
+    'field_featured_text' => 0,
+    'field_featured_link' => 0,
+    'field_featured_image' => 0,
+    'counter' => 0,
+    'nothing' => 0,
+  );
+  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
+  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
+  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_slide_counter']['weight'] = '1';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Link */
+  $handler->display->display_options['fields']['field_featured_link']['id'] = 'field_featured_link';
+  $handler->display->display_options['fields']['field_featured_link']['table'] = 'field_data_field_featured_link';
+  $handler->display->display_options['fields']['field_featured_link']['field'] = 'field_featured_link';
+  $handler->display->display_options['fields']['field_featured_link']['label'] = '';
+  $handler->display->display_options['fields']['field_featured_link']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_featured_link']['alter']['text'] = '<a class="content" href="[field_featured_link-url]">
+  <h2>[title]</h2>
+  <div class="teaser">[field_featured_text]</div>
+  <p class="link">[field_featured_link-title]</p>
+  </a>';
+  $handler->display->display_options['fields']['field_featured_link']['alter']['link_class'] = 'content';
+  $handler->display->display_options['fields']['field_featured_link']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_featured_link']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_featured_link']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_featured_link']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['field_featured_link']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_featured_link']['type'] = 'link_url';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['path'] = '[field_featured_link]';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = 'h2';
+  $handler->display->display_options['fields']['title']['element_class'] = 'block-title';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Teaser */
+  $handler->display->display_options['fields']['field_featured_text']['id'] = 'field_featured_text';
+  $handler->display->display_options['fields']['field_featured_text']['table'] = 'field_data_field_featured_text';
+  $handler->display->display_options['fields']['field_featured_text']['field'] = 'field_featured_text';
+  $handler->display->display_options['fields']['field_featured_text']['label'] = '';
+  $handler->display->display_options['fields']['field_featured_text']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_featured_text']['alter']['path'] = '[field_featured_link]';
+  $handler->display->display_options['fields']['field_featured_text']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['field_featured_text']['alter']['preserve_tags'] = '<p> <br> <b> <strong> <u> <em> <i> <ul> <li> <ol>';
+  $handler->display->display_options['fields']['field_featured_text']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_featured_text']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_featured_text']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['field_featured_text']['settings'] = array(
+    'trim_length' => '600',
+  );
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['field_featured_image']['id'] = 'field_featured_image';
+  $handler->display->display_options['fields']['field_featured_image']['table'] = 'field_data_field_featured_image';
+  $handler->display->display_options['fields']['field_featured_image']['field'] = 'field_featured_image';
+  $handler->display->display_options['fields']['field_featured_image']['label'] = '';
+  $handler->display->display_options['fields']['field_featured_image']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_featured_image']['alter']['path'] = '[field_featured_link]';
+  $handler->display->display_options['fields']['field_featured_image']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_featured_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_featured_image']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_featured_image']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_featured_image']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['field_featured_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_featured_image']['settings'] = array(
+    'image_style' => 'flexslider_panorama',
+    'image_link' => '',
+  );
+  /* Field: Combined teaser and heading */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['ui_name'] = 'Combined teaser and heading';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="coverlayer-inner"><h2 class="block-title">[title]</h2>
+  [field_featured_text]
+  </div>
+  ';
+  $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['alter']['path'] = '[field_featured_link]';
+  $handler->display->display_options['fields']['nothing']['element_type'] = '0';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'coverlayer';
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
   $translatables['featured_content_flexslider'] = array(
     t('Master'),
     t('Featured Content'),
