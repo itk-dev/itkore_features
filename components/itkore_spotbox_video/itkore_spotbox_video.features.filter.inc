@@ -16,7 +16,7 @@ function itkore_spotbox_video_filter_default_formats() {
     'name' => 'Video',
     'cache' => '1',
     'status' => '1',
-    'weight' => '-7',
+    'weight' => '20',
     'filters' => array(),
   );
 
