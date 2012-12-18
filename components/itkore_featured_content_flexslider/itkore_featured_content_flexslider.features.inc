@@ -8,10 +8,7 @@
  * Implements hook_views_api().
  */
 function itkore_featured_content_flexslider_views_api() {
-  list($module, $api) = func_get_args();
-  if ($module == "views" && $api == "views_default") {
-    return array("version" => "3.0");
-  }
+  return array("version" => "3.0");
 }
 
 /**
@@ -20,7 +17,7 @@ function itkore_featured_content_flexslider_views_api() {
 function itkore_featured_content_flexslider_image_default_styles() {
   $styles = array();
 
-  // Exported image style: flexslider_panorama
+  // Exported image style: flexslider_panorama.
   $styles['flexslider_panorama'] = array(
     'name' => 'flexslider_panorama',
     'effects' => array(
