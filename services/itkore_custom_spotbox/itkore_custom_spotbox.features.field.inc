@@ -10,7 +10,7 @@
 function itkore_custom_spotbox_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'node-spotbox-field_download'
+  // Exported field: 'node-spotbox-field_download'.
   $fields['node-spotbox-field_download'] = array(
     'field_config' => array(
       'active' => '1',
@@ -31,6 +31,7 @@ function itkore_custom_spotbox_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'file',
       'settings' => array(
         'display_default' => 0,
@@ -85,6 +86,7 @@ function itkore_custom_spotbox_field_default_fields() {
             'image' => 'image',
             'video' => 0,
           ),
+          'browser_plugins' => array(),
           'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',
@@ -93,7 +95,7 @@ function itkore_custom_spotbox_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-spotbox-field_spotbox_external_link'
+  // Exported field: 'node-spotbox-field_spotbox_external_link'.
   $fields['node-spotbox-field_spotbox_external_link'] = array(
     'field_config' => array(
       'active' => '1',
@@ -103,6 +105,7 @@ function itkore_custom_spotbox_field_default_fields() {
       'field_name' => 'field_spotbox_external_link',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'link',
       'settings' => array(
         'attributes' => array(
@@ -172,7 +175,7 @@ function itkore_custom_spotbox_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-spotbox-field_spotbox_image'
+  // Exported field: 'node-spotbox-field_spotbox_image'.
   $fields['node-spotbox-field_spotbox_image'] = array(
     'field_config' => array(
       'active' => '1',
@@ -193,6 +196,7 @@ function itkore_custom_spotbox_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'image',
       'settings' => array(
         'default_image' => 0,
@@ -252,6 +256,7 @@ function itkore_custom_spotbox_field_default_fields() {
             'image' => 'image',
             'video' => 0,
           ),
+          'browser_plugins' => array(),
           'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',
@@ -260,7 +265,7 @@ function itkore_custom_spotbox_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-spotbox-field_spotbox_text'
+  // Exported field: 'node-spotbox-field_spotbox_text'.
   $fields['node-spotbox-field_spotbox_text'] = array(
     'field_config' => array(
       'active' => '1',
@@ -281,6 +286,7 @@ function itkore_custom_spotbox_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
