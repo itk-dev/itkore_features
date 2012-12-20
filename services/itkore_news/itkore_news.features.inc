@@ -20,7 +20,7 @@ function itkore_news_ctools_plugin_api() {
 function itkore_news_image_default_styles() {
   $styles = array();
 
-  // Exported image style: news_title_image
+  // Exported image style: news_title_image.
   $styles['news_title_image'] = array(
     'name' => 'news_title_image',
     'effects' => array(

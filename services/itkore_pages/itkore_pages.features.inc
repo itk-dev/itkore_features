@@ -20,7 +20,7 @@ function itkore_pages_ctools_plugin_api() {
 function itkore_pages_image_default_styles() {
   $styles = array();
 
-  // Exported image style: title_image
+  // Exported image style: title_image.
   $styles['title_image'] = array(
     'name' => 'title_image',
     'effects' => array(

@@ -10,7 +10,7 @@
 function itkore_pages_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'node-static_page-field_content'
+  // Exported field: 'node-static_page-field_content'.
   $fields['node-static_page-field_content'] = array(
     'field_config' => array(
       'active' => '1',
@@ -31,6 +31,7 @@ function itkore_pages_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '1',
@@ -59,7 +60,7 @@ function itkore_pages_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_content',
       'label' => 'Content',
-      'required' => 1,
+      'required' => 0,
       'settings' => array(
         'display_summary' => 1,
         'text_processing' => '1',
@@ -78,7 +79,7 @@ function itkore_pages_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-static_page-field_download'
+  // Exported field: 'node-static_page-field_download'.
   $fields['node-static_page-field_download'] = array(
     'field_config' => array(
       'active' => '1',
@@ -99,6 +100,7 @@ function itkore_pages_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'file',
       'settings' => array(
         'display_default' => 0,
@@ -151,6 +153,7 @@ function itkore_pages_field_default_fields() {
             'image' => 'image',
             'video' => 'video',
           ),
+          'browser_plugins' => array(),
           'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',
@@ -159,7 +162,7 @@ function itkore_pages_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-static_page-field_links'
+  // Exported field: 'node-static_page-field_links'.
   $fields['node-static_page-field_links'] = array(
     'field_config' => array(
       'active' => '1',
@@ -169,6 +172,7 @@ function itkore_pages_field_default_fields() {
       'field_name' => 'field_links',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'link',
       'settings' => array(
         'attributes' => array(
@@ -242,7 +246,7 @@ function itkore_pages_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-static_page-field_spotbox_title'
+  // Exported field: 'node-static_page-field_spotbox_title'.
   $fields['node-static_page-field_spotbox_title'] = array(
     'field_config' => array(
       'active' => '1',
@@ -263,6 +267,7 @@ function itkore_pages_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(
         'max_length' => '255',
@@ -310,7 +315,7 @@ function itkore_pages_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-static_page-field_subject'
+  // Exported field: 'node-static_page-field_subject'.
   $fields['node-static_page-field_subject'] = array(
     'field_config' => array(
       'active' => '1',
@@ -331,6 +336,7 @@ function itkore_pages_field_default_fields() {
           0 => 'tid',
         ),
       ),
+      'locked' => '0',
       'module' => 'taxonomy',
       'settings' => array(
         'allowed_values' => array(
@@ -380,7 +386,7 @@ function itkore_pages_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-static_page-field_tags'
+  // Exported field: 'node-static_page-field_tags'.
   $fields['node-static_page-field_tags'] = array(
     'field_config' => array(
       'active' => '1',
@@ -401,12 +407,13 @@ function itkore_pages_field_default_fields() {
           0 => 'tid',
         ),
       ),
+      'locked' => '0',
       'module' => 'taxonomy',
       'settings' => array(
         'allowed_values' => array(
           0 => array(
             'vocabulary' => 'tags',
-            'parent' => '0',
+            'parent' => 0,
           ),
         ),
       ),
@@ -453,7 +460,7 @@ function itkore_pages_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-static_page-field_title_image'
+  // Exported field: 'node-static_page-field_title_image'.
   $fields['node-static_page-field_title_image'] = array(
     'field_config' => array(
       'active' => '1',
@@ -474,6 +481,7 @@ function itkore_pages_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'image',
       'settings' => array(
         'default_image' => 0,
@@ -510,6 +518,7 @@ function itkore_pages_field_default_fields() {
       'required' => 0,
       'settings' => array(
         'alt_field' => 1,
+        'default_image' => 0,
         'file_directory' => 'static_title_images',
         'file_extensions' => 'png jpg jpeg',
         'max_filesize' => '',
@@ -531,6 +540,7 @@ function itkore_pages_field_default_fields() {
             'image' => 'image',
             'video' => 0,
           ),
+          'browser_plugins' => array(),
           'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',

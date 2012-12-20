@@ -10,7 +10,7 @@
 function itkore_news_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'node-news-field_content'
+  // Exported field: 'node-news-field_content'.
   $fields['node-news-field_content'] = array(
     'field_config' => array(
       'active' => '1',
@@ -31,6 +31,7 @@ function itkore_news_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '1',
@@ -78,7 +79,7 @@ function itkore_news_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-news-field_download'
+  // Exported field: 'node-news-field_download'.
   $fields['node-news-field_download'] = array(
     'field_config' => array(
       'active' => '1',
@@ -99,6 +100,7 @@ function itkore_news_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'file',
       'settings' => array(
         'display_default' => 0,
@@ -150,7 +152,7 @@ function itkore_news_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-news-field_external_url'
+  // Exported field: 'node-news-field_external_url'.
   $fields['node-news-field_external_url'] = array(
     'field_config' => array(
       'active' => '1',
@@ -160,6 +162,7 @@ function itkore_news_field_default_fields() {
       'field_name' => 'field_external_url',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'link',
       'settings' => array(
         'attributes' => array(
@@ -230,7 +233,7 @@ function itkore_news_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-news-field_links'
+  // Exported field: 'node-news-field_links'.
   $fields['node-news-field_links'] = array(
     'field_config' => array(
       'active' => '1',
@@ -240,6 +243,7 @@ function itkore_news_field_default_fields() {
       'field_name' => 'field_links',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'link',
       'settings' => array(
         'attributes' => array(
@@ -311,7 +315,7 @@ function itkore_news_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-news-field_manchet'
+  // Exported field: 'node-news-field_manchet'.
   $fields['node-news-field_manchet'] = array(
     'field_config' => array(
       'active' => '1',
@@ -332,6 +336,7 @@ function itkore_news_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '1',
@@ -377,7 +382,95 @@ function itkore_news_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-news-field_source'
+  // Exported field: 'node-news-field_news_title_image'.
+  $fields['node-news-field_news_title_image'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_news_title_image',
+      'foreign keys' => array(
+        'fid' => array(
+          'columns' => array(
+            'fid' => 'fid',
+          ),
+          'table' => 'file_managed',
+        ),
+      ),
+      'indexes' => array(
+        'fid' => array(
+          0 => 'fid',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'image',
+      'settings' => array(
+        'default_image' => 0,
+        'uri_scheme' => 'public',
+      ),
+      'translatable' => '1',
+      'type' => 'image',
+    ),
+    'field_instance' => array(
+      'bundle' => 'news',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'image',
+          'settings' => array(
+            'image_link' => '',
+            'image_style' => 'news_title_image',
+          ),
+          'type' => 'image',
+          'weight' => '1',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_news_title_image',
+      'label' => 'Title image',
+      'required' => 0,
+      'settings' => array(
+        'alt_field' => 1,
+        'default_image' => 0,
+        'file_directory' => 'news_title_images',
+        'file_extensions' => 'png jpg jpeg',
+        'max_filesize' => '',
+        'max_resolution' => '',
+        'min_resolution' => '',
+        'title_field' => 1,
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'media',
+        'settings' => array(
+          'allowed_schemes' => array(
+            0 => 'public',
+            1 => 'private',
+          ),
+          'allowed_types' => array(
+            0 => 'image',
+          ),
+          'browser_plugins' => array(),
+          'preview_image_style' => 'thumbnail',
+          'progress_indicator' => 'throbber',
+        ),
+        'type' => 'media_generic',
+        'weight' => '1',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-news-field_source'.
   $fields['node-news-field_source'] = array(
     'field_config' => array(
       'active' => '1',
@@ -398,6 +491,7 @@ function itkore_news_field_default_fields() {
           0 => 'tid',
         ),
       ),
+      'locked' => '0',
       'module' => 'taxonomy',
       'settings' => array(
         'allowed_values' => array(
@@ -446,7 +540,7 @@ function itkore_news_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-news-field_subject'
+  // Exported field: 'node-news-field_subject'.
   $fields['node-news-field_subject'] = array(
     'field_config' => array(
       'active' => '1',
@@ -467,6 +561,7 @@ function itkore_news_field_default_fields() {
           0 => 'tid',
         ),
       ),
+      'locked' => '0',
       'module' => 'taxonomy',
       'settings' => array(
         'allowed_values' => array(
@@ -516,7 +611,7 @@ function itkore_news_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-news-field_tags'
+  // Exported field: 'node-news-field_tags'.
   $fields['node-news-field_tags'] = array(
     'field_config' => array(
       'active' => '1',
@@ -537,12 +632,13 @@ function itkore_news_field_default_fields() {
           0 => 'tid',
         ),
       ),
+      'locked' => '0',
       'module' => 'taxonomy',
       'settings' => array(
         'allowed_values' => array(
           0 => array(
             'vocabulary' => 'tags',
-            'parent' => '0',
+            'parent' => 0,
           ),
         ),
       ),
@@ -582,91 +678,6 @@ function itkore_news_field_default_fields() {
         'settings' => array(),
         'type' => 'options_select',
         'weight' => '7',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-news-field_news_title_image'
-  $fields['node-news-field_news_title_image'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_news_title_image',
-      'foreign keys' => array(
-        'fid' => array(
-          'columns' => array(
-            'fid' => 'fid',
-          ),
-          'table' => 'file_managed',
-        ),
-      ),
-      'indexes' => array(
-        'fid' => array(
-          0 => 'fid',
-        ),
-      ),
-      'module' => 'image',
-      'settings' => array(
-        'default_image' => 0,
-        'uri_scheme' => 'public',
-      ),
-      'translatable' => '1',
-      'type' => 'image',
-    ),
-    'field_instance' => array(
-      'bundle' => 'news',
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'hidden',
-          'module' => 'image',
-          'settings' => array(
-            'image_link' => '',
-            'image_style' => 'news_title_image',
-          ),
-          'type' => 'image',
-          'weight' => '1',
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_news_title_image',
-      'label' => 'Title image',
-      'required' => 0,
-      'settings' => array(
-        'alt_field' => 1,
-        'file_directory' => 'news_title_images',
-        'file_extensions' => 'png jpg jpeg',
-        'max_filesize' => '',
-        'max_resolution' => '',
-        'min_resolution' => '',
-        'title_field' => 1,
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'media',
-        'settings' => array(
-          'allowed_schemes' => array(
-            0 => 'public',
-            1 => 'private',
-          ),
-          'allowed_types' => array(
-            0 => 'image',
-          ),
-          'preview_image_style' => 'thumbnail',
-          'progress_indicator' => 'throbber',
-        ),
-        'type' => 'media_generic',
-        'weight' => '1',
       ),
     ),
   );
