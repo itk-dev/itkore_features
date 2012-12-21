@@ -10,7 +10,7 @@
 function itkore_featured_content_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'node-featured_content-field_featured_image'
+  // Exported field: 'node-featured_content-field_featured_image'.
   $fields['node-featured_content-field_featured_image'] = array(
     'field_config' => array(
       'active' => '1',
@@ -31,6 +31,7 @@ function itkore_featured_content_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'image',
       'settings' => array(
         'default_image' => 0,
@@ -52,7 +53,7 @@ function itkore_featured_content_field_default_fields() {
             'image_style' => '',
           ),
           'type' => 'image',
-          'weight' => 2,
+          'weight' => '2',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -67,6 +68,7 @@ function itkore_featured_content_field_default_fields() {
       'required' => 0,
       'settings' => array(
         'alt_field' => 0,
+        'default_image' => 0,
         'file_directory' => 'features',
         'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '',
@@ -90,6 +92,7 @@ function itkore_featured_content_field_default_fields() {
             'image' => 'image',
             'video' => 0,
           ),
+          'browser_plugins' => array(),
           'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',
@@ -98,7 +101,7 @@ function itkore_featured_content_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-featured_content-field_featured_link'
+  // Exported field: 'node-featured_content-field_featured_link'.
   $fields['node-featured_content-field_featured_link'] = array(
     'field_config' => array(
       'active' => '1',
@@ -108,6 +111,7 @@ function itkore_featured_content_field_default_fields() {
       'field_name' => 'field_featured_link',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'link',
       'settings' => array(
         'attributes' => array(
@@ -138,7 +142,7 @@ function itkore_featured_content_field_default_fields() {
           'module' => 'link',
           'settings' => array(),
           'type' => 'link_default',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -180,7 +184,7 @@ function itkore_featured_content_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-featured_content-field_featured_text'
+  // Exported field: 'node-featured_content-field_featured_text'.
   $fields['node-featured_content-field_featured_text'] = array(
     'field_config' => array(
       'active' => '1',
@@ -201,6 +205,7 @@ function itkore_featured_content_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -217,7 +222,7 @@ function itkore_featured_content_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 1,
+          'weight' => '1',
         ),
         'teaser' => array(
           'label' => 'above',
