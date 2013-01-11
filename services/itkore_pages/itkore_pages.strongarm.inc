@@ -41,7 +41,7 @@ function itkore_pages_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '9',
+          'weight' => '6',
         ),
       ),
       'display' => array(),

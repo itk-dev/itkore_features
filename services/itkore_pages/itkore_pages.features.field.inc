@@ -140,7 +140,7 @@ function itkore_pages_field_default_fields() {
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '6',
+        'weight' => '5',
       ),
     ),
   );
@@ -208,7 +208,7 @@ function itkore_pages_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '5',
+        'weight' => '4',
       ),
     ),
   );
