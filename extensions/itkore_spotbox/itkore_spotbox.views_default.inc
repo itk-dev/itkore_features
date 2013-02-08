@@ -52,21 +52,18 @@ function itkore_spotbox_views_default_views() {
   $handler->display->display_options['fields']['field_spotbox_title']['element_class'] = 'spotbox-title';
   $handler->display->display_options['fields']['field_spotbox_title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_spotbox_title']['element_default_classes'] = FALSE;
-  /* Felt: Image (Title image) */
-  $handler->display->display_options['fields']['field_title_image']['id'] = 'field_title_image';
-  $handler->display->display_options['fields']['field_title_image']['table'] = 'field_data_field_title_image';
-  $handler->display->display_options['fields']['field_title_image']['field'] = 'field_title_image';
-  $handler->display->display_options['fields']['field_title_image']['ui_name'] = 'Image (Title image)';
-  $handler->display->display_options['fields']['field_title_image']['label'] = '';
-  $handler->display->display_options['fields']['field_title_image']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_title_image']['element_class'] = 'spotbox-image';
-  $handler->display->display_options['fields']['field_title_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_title_image']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_title_image']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_title_image']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_title_image']['hide_alter_empty'] = FALSE;
-  $handler->display->display_options['fields']['field_title_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_title_image']['settings'] = array(
+  /* Felt: Indhold: Spotbox image */
+  $handler->display->display_options['fields']['field_spotbox_image']['id'] = 'field_spotbox_image';
+  $handler->display->display_options['fields']['field_spotbox_image']['table'] = 'field_data_field_spotbox_image';
+  $handler->display->display_options['fields']['field_spotbox_image']['field'] = 'field_spotbox_image';
+  $handler->display->display_options['fields']['field_spotbox_image']['label'] = '';
+  $handler->display->display_options['fields']['field_spotbox_image']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_spotbox_image']['element_class'] = 'spotbox-image';
+  $handler->display->display_options['fields']['field_spotbox_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_spotbox_image']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_spotbox_image']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_spotbox_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_spotbox_image']['settings'] = array(
     'image_style' => 'spotbox_image',
     'image_link' => 'content',
   );

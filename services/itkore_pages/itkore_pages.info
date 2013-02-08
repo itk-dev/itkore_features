@@ -17,6 +17,7 @@ features[ctools][] = field_group:field_group:1
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:1
 features[field][] = node-static_page-field_content
+features[field][] = node-static_page-field_spotbox_image
 features[field][] = node-static_page-field_spotbox_text
 features[field][] = node-static_page-field_spotbox_title
 features[field][] = node-static_page-field_title_image
