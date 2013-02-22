@@ -22,10 +22,7 @@ function itkore_news_display_ctools_plugin_api() {
  * Implements hook_views_api().
  */
 function itkore_news_display_views_api() {
-  list($module, $api) = func_get_args();
-  if ($module == "views" && $api == "views_default") {
-    return array("version" => "3.0");
-  }
+  return array("version" => "3.0");
 }
 
 /**
@@ -34,7 +31,7 @@ function itkore_news_display_views_api() {
 function itkore_news_display_image_default_styles() {
   $styles = array();
 
-  // Exported image style: news
+  // Exported image style: news_large.
   $styles['news_large'] = array(
     'name' => 'news_large',
     'effects' => array(
@@ -56,7 +53,7 @@ function itkore_news_display_image_default_styles() {
     ),
   );
 
-  // Exported image style: news_thumbnail
+  // Exported image style: news_thumbnail.
   $styles['news_thumbnail'] = array(
     'name' => 'news_thumbnail',
     'effects' => array(
