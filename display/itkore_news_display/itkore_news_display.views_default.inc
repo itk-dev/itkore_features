@@ -659,7 +659,7 @@ function itkore_news_display_views_default_views() {
   $handler = $view->new_display('panel_pane', 'News overview (import)', 'panel_pane_1');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Indhold: External URL */
+  /* Felt: Handler mangler eller er i stykker */
   $handler->display->display_options['fields']['field_external_url']['id'] = 'field_external_url';
   $handler->display->display_options['fields']['field_external_url']['table'] = 'field_data_field_external_url';
   $handler->display->display_options['fields']['field_external_url']['field'] = 'field_external_url';
@@ -667,8 +667,6 @@ function itkore_news_display_views_default_views() {
   $handler->display->display_options['fields']['field_external_url']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_external_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_external_url']['hide_alter_empty'] = FALSE;
-  $handler->display->display_options['fields']['field_external_url']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_external_url']['type'] = 'plain';
   /* Felt: Indhold: Oprettelsesdato */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';

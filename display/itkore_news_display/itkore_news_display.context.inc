@@ -41,12 +41,6 @@ function itkore_news_display_context_default_contexts() {
           'region' => 'secondary_content',
           'weight' => '-10',
         ),
-        'views-news_taxonomy_blocks-block_2' => array(
-          'module' => 'views',
-          'delta' => 'news_taxonomy_blocks-block_2',
-          'region' => 'secondary_content',
-          'weight' => '-10',
-        ),
       ),
     ),
   );
