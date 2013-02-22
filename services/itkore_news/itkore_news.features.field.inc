@@ -260,8 +260,8 @@ function itkore_news_field_default_fields() {
       'settings' => array(
         'allowed_values' => array(
           0 => array(
-            'parent' => '0',
             'vocabulary' => 'source',
+            'parent' => '0',
           ),
         ),
       ),
@@ -290,7 +290,7 @@ function itkore_news_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_source',
       'label' => 'Source',
-      'required' => 1,
+      'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
       ),
