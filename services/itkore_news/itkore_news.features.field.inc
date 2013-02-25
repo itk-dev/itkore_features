@@ -260,8 +260,8 @@ function itkore_news_field_default_fields() {
       'settings' => array(
         'allowed_values' => array(
           0 => array(
-            'vocabulary' => 'source',
             'parent' => '0',
+            'vocabulary' => 'source',
           ),
         ),
       ),

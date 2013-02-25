@@ -231,11 +231,12 @@ function itkore_news_display_default_page_manager_pages() {
       'settings' => array(
         'input_form' => 'tid',
         'vids' => array(
-          3 => '3',
-          2 => 0,
+          2 => '2',
+          3 => 0,
           1 => 0,
         ),
         'breadcrumb' => 1,
+        'transform' => 0,
       ),
     ),
   );

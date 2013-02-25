@@ -57,8 +57,8 @@ function itkore_news_display_views_default_views() {
   $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
   $handler->display->display_options['relationships']['term_node_tid']['field'] = 'term_node_tid';
   $handler->display->display_options['relationships']['term_node_tid']['vocabularies'] = array(
-    'source' => 'source',
-    'subject' => 0,
+    'subject' => 'subject',
+    'source' => 0,
     'tags' => 0,
   );
   /* Felt: Indhold: Oprettelsesdato */
@@ -471,7 +471,7 @@ function itkore_news_display_views_default_views() {
   $handler->display->display_options['argument_input'] = array(
     'field_subject_tid' => array(
       'type' => 'panel',
-      'context' => 'entity:comment.author',
+      'context' => 'terms.tid',
       'context_optional' => 0,
       'panel' => '0',
       'fixed' => '',
@@ -1064,10 +1064,6 @@ function itkore_news_display_views_default_views() {
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['hide_alter_empty'] = FALSE;
-  /* Sorteringskriterie: Ord i ordforråd: Navn */
-  $handler->display->display_options['sorts']['name']['id'] = 'name';
-  $handler->display->display_options['sorts']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['sorts']['name']['field'] = 'name';
 
   /* Display: News subject links */
   $handler = $view->new_display('block', 'News subject links', 'block_1');
