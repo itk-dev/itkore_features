@@ -39,7 +39,7 @@ function itkore_news_display_context_default_contexts() {
           'module' => 'views',
           'delta' => 'news_taxonomy_blocks-block_1',
           'region' => 'secondary_content',
-          'weight' => '-10',
+          'weight' => 0,
         ),
       ),
     ),
